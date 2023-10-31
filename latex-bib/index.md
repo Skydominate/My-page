@@ -1,4 +1,4 @@
-# Latex 导言区
+# LaTex中BibTex参考文献类型及引用格式
 
 
 ***论文写作参考文献格式设置介绍***
@@ -7,9 +7,11 @@
 
 ## Bibtex 的条目类型简介及引用
 
-- 期刊论文：**article**: any article published in a periodical like a journal or magazine article
+### 1.1 article
 
-```markdown
+**期刊论文**: any article published in a periodical like a journal or magazine article
+
+```bibtex
 @article{CitekeyArticle,
   author   = "P. J. Cohen",
   title    = "The independence of the continuum hypothesis",
@@ -21,9 +23,11 @@
 }
 ```
 
-- 书籍：**book**: a book
+### 1.2 book
 
-```markdown
+**书籍**: a book
+
+```bibtex
 @book{CitekeyBook,
   author    = "Leonard Susskind and George Hrabovsky",
   title     = "Classical mechanics: the theoretical minimum",
@@ -33,9 +37,11 @@
 }
 ```
 
-- 小册子：**booklet**: like a book but without a designated publisher
+### 1.3 booklet
 
-```markdown
+**小册子**: like a book but without a designated publisher
+
+```bibtex
 @booklet{CitekeyBooklet,
   title        = "Canoe tours in {S}weden",
   author       = "Maria Swetla", 
@@ -45,11 +51,15 @@
 }
 ```
 
-- 会议论文：**conference**: a conference paper
+### 1.4 conference
 
-- 书籍中的一个章节：**inbook**: a section or chapter in a book
+**会议论文**: a conference paper
 
-```markdown
+### 1.5 inbook
+
+**书籍中的一个章节**: a section or chapter in a book
+
+```bibtex
 @inbook{CitekeyInbook,
   author    = "Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Jane B. Reece",
   title     = "Photosynthesis",
@@ -61,9 +71,11 @@
 }
 ```
 
-- 文集中的一篇文章：**incollection**: an article in a collection
+### 1.6 incollection
 
-```markdown
+**文集中的一篇文章**: an article in a collection
+
+```bibtex
 @incollection{CitekeyIncollection,
   author    = "Shapiro, Howard M.",
   editor    = "Hawley, Teresa S. and Hawley, Robert G.",
@@ -76,9 +88,11 @@
 }
 ```
 
-- 会议论文：**inproceedings**: a conference paper (same as the conference entry type)
+### 1.7 inproceedings
 
-```markdown
+**会议论文**: a conference paper (same as the conference entry type)
+
+```bibtex
 @inproceedings{CitekeyInproceedings,
   author    = "Holleis, Paul and Wagner, Matthias and Koolwaaij, Johan",
   title     = "Studying mobile context-aware social services in the wild",
@@ -91,9 +105,11 @@
 }
 ```
 
-- 技术手册：**manual**: a technical manual
+### 1.8 manual
 
-```markdown
+**技术手册**: a technical manual
+
+```bibtex
 @manual{CitekeyManual,
   title        = "{R}: A Language and Environment for Statistical Computing",
   author       = "{R Core Team}",
@@ -103,9 +119,11 @@
 }
 ```
 
-- 硕士论文：**masterthesis**: a Master's thesis
+### 1.8 masterthesis
 
-```markdown
+**硕士论文**: a Master's thesis
+
+```bibtex
 @mastersthesis{CitekeyMastersthesis,
   author  = "Jian Tang",
   title   = "Spin structure of the nucleon in the asymptotic limit",
@@ -116,9 +134,11 @@
 }
 ```
 
-- 如果没有其他合适的：**misc**: used if nothing else fits
+### 1.9 misc
 
-```markdown
+**如果没有其他合适的**: used if nothing else fits
+
+```bibtex
 @misc{CitekeyMisc,
   title        = "Pluto: The 'Other' Red Planet",
   author       = "{NASA}",
@@ -128,9 +148,11 @@
 }
 ```
 
-- 博士论文：**phdthesis**: a PHD thesis
+### 1.10 phdthesis
 
-```markdown
+**博士论文**: a PHD thesis
+
+```bibtex
 @phdthesis{CitekeyPhdthesis,
   author  = "Rempel, Robert Charles",
   title   = "Relaxation Effects for Coupled Nuclear Spins",
@@ -141,9 +163,11 @@
 }
 ```
 
-- 整个会议：**proceedings**: the whole conference proceedings
+### 1.11 proceedings
 
-```markdown
+**整个会议**: the whole conference proceedings
+
+```bibtex
 @proceedings{CitekeyProceedings,
   editor    = "Susan Stepney and Sergey Verlan",
   title     = "Proceedings of the 17th International Conference on Computation and Natural Computation, Fontainebleau, France",
@@ -155,9 +179,11 @@
 }
 ```
 
-- 科技报告：**techreport**: a technical report, government report or white paper
+### 1.12 techreport
 
-```markdown
+**科技报告**: a technical report, government report or white paper
+
+```bibtex
 @techreport{CitekeyTechreport,
   title       = "{W}asatch {S}olar {P}roject Final Report",
   author      = "Bennett, Vicki and Bowman, Kate and Wright, Sarah",
@@ -169,9 +195,11 @@
 }
 ```
 
-- 未正式发表的作品：**unpublished**: a work that has not yet been officially published
+### 1.13 unpublished
 
-```markdown
+**未正式发表的作品**: a work that has not yet been officially published
+
+```bibtex
 @unpublished{CitekeyUnpublished,
   author = "Mohinder Suresh",
   title  = "Evolution: a revised theory",
@@ -179,8 +207,6 @@
 }
 ```
 
-___
-
-*参考资料*
-[A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/#:~:text=Here%20is%20a%20complete%20listing%20of%20the%20BibTeX,paper%20%28same%20as%20the%20conference%20entry%20type%29%20%E6%9B%B4%E5%A4%9A%E9%A1%B9%E7%9B%AE)
-[The 14 BibTeX entry types](https://www.bibtex.com/e/entry-types/)
+> *参考资料*
+> [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/#:~:text=Here%20is%20a%20complete%20listing%20of%20the%20BibTeX,paper%20%28same%20as%20the%20conference%20entry%20type%29%20%E6%9B%B4%E5%A4%9A%E9%A1%B9%E7%9B%AE)
+> [The 14 BibTeX entry types](https://www.bibtex.com/e/entry-types/)
