@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>视频流服务器搭建[简单版] - 难知如阴</title><meta name="Description" content="曾经做过的视频直播点播服务器，记录一下搭建过程"><meta property="og:title" content="视频流服务器搭建[简单版]" />
+<meta property="og:description" content="曾经做过的视频直播点播服务器，记录一下搭建过程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skydominate.github.io/video-live-stream-or-vod/" /><meta property="og:image" content="https://skydominate.github.io/video-live-stream-or-vod/featured-image.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-04T21:57:40+08:00" />
+<meta property="article:modified_time" content="2021-11-08T01:45:40+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://skydominate.github.io/video-live-stream-or-vod/featured-image.jpg"/>
+<meta name="twitter:title" content="视频流服务器搭建[简单版]"/>
+<meta name="twitter:description" content="曾经做过的视频直播点播服务器，记录一下搭建过程"/>
+<meta name="application-name" content="难知如阴">
+<meta name="apple-mobile-web-app-title" content="难知如阴"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://skydominate.github.io/video-live-stream-or-vod/" /><link rel="prev" href="https://skydominate.github.io/basic-markdown-syntax/" /><link rel="next" href="https://skydominate.github.io/build-hugo-with-loveit-basic/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "视频流服务器搭建[简单版]",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/skydominate.github.io\/video-live-stream-or-vod\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/skydominate.github.io\/video-live-stream-or-vod\/featured-image.jpg",
+                            "width":  308 ,
+                            "height":  163 
+                        }],"genre": "posts","keywords": "教程, video, 直播, 点播","wordcount":  4251 ,
+        "url": "https:\/\/skydominate.github.io\/video-live-stream-or-vod\/","datePublished": "2021-02-04T21:57:40+08:00","dateModified": "2021-11-08T01:45:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Lioyd Shaw","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/skydominate.github.io\/images\/shadow.jpg",
+                    "width":  1024 ,
+                    "height":  576 
+                }},"author": {
+                "@type": "Person",
+                "name": "lizilong"
+            },"description": "曾经做过的视频直播点播服务器，记录一下搭建过程"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="难知如阴"><span class="header-title-pre"><i class='fas fa-theater-masks fa-fw'></i></span>难知如阴</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/lizilong1993" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/video-live-stream-or-vod/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="难知如阴"><span class="header-title-pre"><i class='fas fa-theater-masks fa-fw'></i></span>难知如阴</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/lizilong1993" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/video-live-stream-or-vod/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">视频流服务器搭建[简单版]</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://lizilong1993.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>lizilong</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-04">2021-02-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4251 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/video-live-stream-or-vod/" class="leancloud_visitors" data-flag-title="视频流服务器搭建[简单版]">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/video-live-stream-or-vod/featured-image.jpg"
+        data-srcset="/video-live-stream-or-vod/featured-image.jpg, /video-live-stream-or-vod/featured-image.jpg 1.5x, /video-live-stream-or-vod/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/video-live-stream-or-vod/featured-image.jpg"
+        title="曾经做过的视频直播点播服务器，记录一下搭建过程" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">1 视频流介绍</a>
+      <ul>
+        <li><a href="#11视频流协议">1.1视频流协议</a></li>
+        <li><a href="#12-直播点播框架">1.2 直播点播框架</a></li>
+      </ul>
+    </li>
+    <li><a href="#VOD">2 视频流点播服务器搭建[2]</a>
+      <ul>
+        <li><a href="#21-环境搭建">2.1 环境搭建</a>
+          <ul>
+            <li><a href="#docker容器">Docker容器</a></li>
+            <li><a href="#国内镜像加速源">国内镜像加速源</a></li>
+            <li><a href="#更新软件源列表">更新软件源列表</a></li>
+          </ul>
+        </li>
+        <li><a href="#22-nginx安装">2.2 Nginx安装</a>
+          <ul>
+            <li><a href="#源码下载">源码下载</a></li>
+            <li><a href="#编译安装">编译安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#23-配置rtmp服务">2.3 配置rtmp服务</a>
+          <ul>
+            <li><a href="#添加rtmp服务">添加rtmp服务</a></li>
+            <li><a href="#验证配置">验证配置</a></li>
+          </ul>
+        </li>
+        <li><a href="#24-视频播放">2.4 视频播放</a>
+          <ul>
+            <li><a href="#添加视频文件">添加视频文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#25-安装vlc播放器">2.5 安装VLC播放器</a></li>
+      </ul>
+    </li>
+    <li><a href="#live_stream">3 视频流直播服务器搭建[3]</a>
+      <ul>
+        <li><a href="#31-配置rtmp直播服务">3.1 配置rtmp直播服务</a></li>
+        <li><a href="#32-obs推流">3.2 OBS推流</a></li>
+        <li><a href="#33-vlc拉流">3.3 VLC拉流</a></li>
+        <li><a href="#34-直播转录播">3.4 直播转录播</a></li>
+      </ul>
+    </li>
+    <li><a href="#ref">参考文献</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="abstract">1 视频流介绍</h2>
+<h3 id="11视频流协议">1.1视频流协议</h3>
+<p>几种不同视频流协议的优缺点如下[1]：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210122084333.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210122084333.png, https://gitee.com/lizilong1993/image/raw/master/20210122084333.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210122084333.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210122084333.png"
+        title="三种协议" /></p>
+<center>三种协议总结</center>
+<h3 id="12-直播点播框架">1.2 直播点播框架</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.ar414.com/ar414-nginx-rtmp.png"
+        data-srcset="https://cdn.ar414.com/ar414-nginx-rtmp.png, https://cdn.ar414.com/ar414-nginx-rtmp.png 1.5x, https://cdn.ar414.com/ar414-nginx-rtmp.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.ar414.com/ar414-nginx-rtmp.png"
+        title="https://cdn.ar414.com/ar414-nginx-rtmp.png" /></p>
+<center>分流+水印的直播系统拓扑图</center>
+<h2 id="VOD">2 视频流点播服务器搭建[2]</h2>
+<h3 id="21-环境搭建">2.1 环境搭建</h3>
+<h4 id="docker容器">Docker容器</h4>
+<p>rtmp服务默认端口是1935，另外安装nginx后需要进行验证，需要开放一个http端口，为了防止和宿主机的8080端口冲突，这里我们使用<strong>8082</strong>端口；我们需要将视频文件拷贝到容器中，因此还需要挂载一个目录，因此docker容器运行命令如下所示:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run --name video -v /Users/lzl/files:/root/videos -d -i -p 8082:8082  -p 1935:1935 ubuntu:18.04 <span class="o">&amp;&amp;</span> docker ps
+</code></pre></td></tr></table>
+</div>
+</div><p>命令很执行完成之后，docker返回结果如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123211451.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123211451.png, https://gitee.com/lizilong1993/image/raw/master/20210123211451.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123211451.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123211451.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123211451.png" />
+在上图中中可以看到已经有一个容器运行了，接着我们需要进入容器安装nginx和rtmp模块，进入容器命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it video bash
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行完成之后，返回信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123211406.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123211406.png, https://gitee.com/lizilong1993/image/raw/master/20210123211406.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123211406.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123211406.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123211406.png" /></p>
+<h4 id="国内镜像加速源">国内镜像加速源</h4>
+<p>docker的Ubuntu镜像apt软件源默认使用官方域名，这个域名在国内访问非常慢，为了后续安装速度能够更快，我们将apt的软件源更换成阿里云源的地址，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+</span><span class="s1">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+</span><span class="s1">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+</span><span class="s1">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+</span><span class="s1">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+</span><span class="s1">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+</span><span class="s1">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+</span><span class="s1">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+</span><span class="s1">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+</span><span class="s1">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+</span><span class="s1">&#39;</span> &gt; /etc/apt/sources.list  <span class="o">&amp;&amp;</span> cat /etc/apt/sources.list
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123211726.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123211726.png, https://gitee.com/lizilong1993/image/raw/master/20210123211726.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123211726.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123211726.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123211726.png" />
+从上图中可以看到已经执行成功，已经使用阿里云的软件源替代了默认的软件源。</p>
+<h4 id="更新软件源列表">更新软件源列表</h4>
+<p>接下来我们更新一下本地的软件源信息，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt update
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123212108.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123212108.png, https://gitee.com/lizilong1993/image/raw/master/20210123212108.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123212108.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123212108.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123212108.png" />
+从上图中可以看到已经从阿里云中更新了软件源信息，更新速度也非常快，到此我们已经完成运行环境的基础准备。</p>
+<h3 id="22-nginx安装">2.2 Nginx安装</h3>
+<p>在我们更新apt软件源完成之后，就可以安装Nginx等一些软件的依赖环境，执行的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-get install -y libpcre3 libpcre3-dev libssl-dev zlib1g-dev gcc  wget unzip vim make curl
+</code></pre></td></tr></table>
+</div>
+</div><p>安装的依赖软件有点多，会根据你的网速安装速度也不一样，命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213108.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213108.png, https://gitee.com/lizilong1993/image/raw/master/20210123213108.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213108.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213108.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213108.png" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213146.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213146.png, https://gitee.com/lizilong1993/image/raw/master/20210123213146.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213146.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213146.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213146.png" />
+从上图中可以看到依赖已经安装完成，接下来我们开始安装nginx，nginx不能使用apt安装，需要源码编译安装才可以，因为需要我们编译一个模块进去。</p>
+<h4 id="源码下载">源码下载</h4>
+<p>我们首先将需要的模块下载下来，这里我不准备使用<em>nginx-rtmp-module</em>，而是使用<em>nginx-http-flv-module</em>来替代，因为后者是基于前者开发的，前者拥有的功能后者都有，后者是国内的开发开发，有中文文档，所以就采用它了，首先将它下载下来并解压，执行的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/winshining/nginx-http-flv-module/archive/master.zip <span class="p">;</span> unzip master.zip
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213510.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213510.png, https://gitee.com/lizilong1993/image/raw/master/20210123213510.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213510.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213510.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213510.png" />
+从上图中可以看出已经下载并解压完成，接着我们还需要下载nginx本身的源码，下载Nginx源码并解压的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget http://nginx.org/download/nginx-1.17.6.tar.gz  <span class="o">&amp;&amp;</span> tar -zxvf nginx-1.17.6.tar.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213632.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213632.png, https://gitee.com/lizilong1993/image/raw/master/20210123213632.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213632.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213632.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213632.png" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213709.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213709.png, https://gitee.com/lizilong1993/image/raw/master/20210123213709.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213709.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213709.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213709.png" />
+下载并解压完成，到此我们两个所需要的源码都准备完成。</p>
+<h4 id="编译安装">编译安装</h4>
+<p>接着我们进入编译安装环节，首先进入刚才解压的nginx目录当中，执行的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span>  nginx-1.17.6 <span class="o">&amp;&amp;</span> ls
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123213835.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123213835.png, https://gitee.com/lizilong1993/image/raw/master/20210123213835.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123213835.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123213835.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123213835.png" />
+从上图中可以看到解压出来的目录结构，我们执行./configure便可以配置编译参数，这个地方我们需要将刚才下载的插件<em>nginx-http-flv-module</em>加入进来,执行的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./configure --add-module<span class="o">=</span>../nginx-http-flv-module-master
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123214010.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123214010.png, https://gitee.com/lizilong1993/image/raw/master/20210123214010.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123214010.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123214010.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123214010.png" />
+在上图中可以看到准备编译已经完成，但在编译的过程当中有可能会出现一些意外因素，nginx默认编译非常严格，只要遇到一些意外就会中断编译，因此我们将一些非致命的意外设置为警告模式，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim objs/Makefile
+</code></pre></td></tr></table>
+</div>
+</div><p>在当前文件夹下有一个<em>objs/Makefile</em>文件，我们将里面的-Werror删除，用vim打开文件后如下所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123214201.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123214201.png, https://gitee.com/lizilong1993/image/raw/master/20210123214201.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123214201.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123214201.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123214201.png" />
+删除之后，保存并退出，接着就可以进行编译Nginx了，编译的过程稍微有点长，执行的命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123214647.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123214647.png, https://gitee.com/lizilong1993/image/raw/master/20210123214647.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123214647.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123214647.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123214647.png" />
+在上图中可以看到一些Nginx的一些日志存放路径信息，当我们执行安装命令后，就会往这些文件里写入相应信息，执行安装命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make install
+</code></pre></td></tr></table>
+</div>
+</div><p>安装命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123214756.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123214756.png, https://gitee.com/lizilong1993/image/raw/master/20210123214756.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123214756.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123214756.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123214756.png" />
+在上图中可以可以看到安装过程大致执行了哪些命令，安装完成后接下来需要进行一些简单的配置就可以使用了.</p>
+<h3 id="23-配置rtmp服务">2.3 配置rtmp服务</h3>
+<p>在完成Nginx的安装之后，我们需要对Nginx进行一番配置，并启动Nginx服务。</p>
+<h4 id="添加rtmp服务">添加rtmp服务</h4>
+<p>我们直接使用vim命令去编辑Nginx的配置文件，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /usr/local/nginx/conf/nginx.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>vim命令执行之后，打开的编辑窗口如下所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123215003.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123215003.png, https://gitee.com/lizilong1993/image/raw/master/20210123215003.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123215003.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123215003.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123215003.png" />
+我们将以下配置信息复制并粘贴到配置文件信息里面，放在http配置上面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">rtmp {                #RTMP服务
+   server {
+       listen 1935;  #//服务端口
+        chunk_size 4096;   #//数据传输块的大小
+ 
+ 
+        application vod {
+                play /opt/video/vod; #//视频文件存放位置。
+        }
+   }
+}
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>tips：
+vim快捷键</p>
+<ul>
+<li>x删除光标选中字符</li>
+<li>X删除左边字符</li>
+<li>Esc退出编辑模式</li>
+<li>:wq保存并退出</li>
+</ul>
+</blockquote>
+<h4 id="验证配置">验证配置</h4>
+<p>粘贴完成并保存之后，我们在终端执行nginx -t命令，来测试一下配置文件是否有异常，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/local/nginx/sbin/nginx -t
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123220847.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123220847.png, https://gitee.com/lizilong1993/image/raw/master/20210123220847.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123220847.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123220847.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123220847.png" />
+在上图中可以看出Nginx提示我们配置文件没有异常，说明我们配置没有语法错误，我们启动一下Nginx并使用curl命令来测试启动是否成功，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/local/nginx/sbin/nginx <span class="o">&amp;&amp;</span> curl http://127.0.0.1
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123221043.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123221043.png, https://gitee.com/lizilong1993/image/raw/master/20210123221043.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123221043.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123221043.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123221043.png" />
+从上图中Nginx返回的信息可以看出我们Nginx服务已经启动成功.</p>
+<h3 id="24-视频播放">2.4 视频播放</h3>
+<p>在上述环节都操作完毕之后，此时基本都处于正常，现在我们就可以开始来播放视频了，不过我们还需要在视频目录下放一个视频文件，这样才能播放到这个视频。</p>
+<h4 id="添加视频文件">添加视频文件</h4>
+<p>接着我们创建一个存放视频的文件夹，并将权限设置设置为777，防止因为权限问题导致无法播放，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p /opt/video/vod  <span class="o">&amp;&amp;</span> chmod -R <span class="m">777</span> /opt/video/vod
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123221334.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123221334.png, https://gitee.com/lizilong1993/image/raw/master/20210123221334.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123221334.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123221334.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123221334.png" />
+在上图中可以看出，创建文件夹和设置权限命令已经执行完成，接着我们需要将我们准备好的视频文件复制到我们之前配置指定的目录下，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /home/lzl/video/LJ3-01_SVC_WHU_00100_20190701T101239_FS_OVE_0001_L2A_0001_CMOS1.mp4 /opt/video/vod <span class="o">&amp;&amp;</span>  ls /opt/video/vod
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123230714.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123230714.png, https://gitee.com/lizilong1993/image/raw/master/20210123230714.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123230714.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123230714.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123230714.png" />
+在上图中可以看出，已经将视频文件LJ3-01_SVC_WHU_00100_20190701T101239_FS_OVE_0001_L2A_0001_CMOS1.mp4文件复制到此目录中，接着我们就可以测试播放了；不过在测试播放之前我们需要安装一个视频播放器，因为浏览器是不支持rtmp协议。</p>
+<blockquote>
+<p>tips
+如果显示cp:cannot stat &ldquo;xxx&rdquo;,no such file or directory,就需要退出容器从主机往容器内上传文件，具体参考<a href="https://www.cnblogs.com/jifeng/p/10930111.html" target="_blank" rel="noopener noreffer">docker从容器里面拷文件到宿主机或从宿主机拷文件到docker容器里面</a>。</p>
+</blockquote>
+<h3 id="25-安装vlc播放器">2.5 安装VLC播放器</h3>
+<p>一般用于调试流媒体我们习惯使用vlc播放器，我们去官网下载一下他，官网地址如下</p>
+<p><a href="https://www.videolan.org/" target="_blank" rel="noopener noreffer">https://www.videolan.org/</a>
+安装完成后，打开软件，选择<em>媒体-&gt;打开网络串流</em>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123230954.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123230954.png, https://gitee.com/lizilong1993/image/raw/master/20210123230954.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123230954.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123230954.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123230954.png" />
+在上图中可以看到窗口中有一个输入框，将如下播放地址复制进去之后，点击右下方的open按钮，就可以开始播放了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rtmp://125.220.153.38/vod/LJ3-01_SVC_WHU_00100_20190701T101239_FS_OVE_0001_L2A_0001_CMOS1.mp4
+</code></pre></td></tr></table>
+</div>
+</div><p>点击后成功播放效果下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210123231549.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210123231549.png, https://gitee.com/lizilong1993/image/raw/master/20210123231549.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210123231549.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210123231549.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210123231549.png" />
+至此Nginx+rtmp模块搭建点播服务已经成功了。</p>
+<h2 id="live_stream">3 视频流直播服务器搭建[3]</h2>
+<p>搭建好了点播服务，还需要继续搭建直播服务。</p>
+<h3 id="31-配置rtmp直播服务">3.1 配置rtmp直播服务</h3>
+<p>我们需要在nginx配置文件中增加直播的配置，这里我们依然使用vim命令打开配置文件，执行命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim  /usr/local/nginx/conf/nginx.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>vim命令执行结果如下
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124124252.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124124252.png, https://gitee.com/lizilong1993/image/raw/master/20210124124252.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124124252.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124124252.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124124252.png" />
+我们将直播配置添加到rtmp项配置下面，其中的含义已经在配置中注明，配置如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">application live<span class="o">{</span>
+            live on<span class="p">;</span>        <span class="c1">#直播</span>
+ 
+            <span class="c1">#回看功能 视频切片变成ts文件</span>
+            hls on<span class="p">;</span>                                 <span class="c1">#这个参数把直播服务器改造成实时回放服务器。</span>
+            wait_key on<span class="p">;</span>                           <span class="c1">#对视频切片进行保护，这样就不会产生马赛克了。</span>
+            hls_path /opt/video/rtmp/hls<span class="p">;</span>       <span class="c1">#切片视频文件存放位置。</span>
+            hls_fragment 10s<span class="p">;</span>                       <span class="c1">#每个视频切片的时长。</span>
+            hls_playlist_length 60s<span class="p">;</span>                <span class="c1">#总共可以回看的事件，这里设置的是1分钟。</span>
+            hls_continuous on<span class="p">;</span>                      <span class="c1">#连续模式。</span>
+            hls_cleanup on<span class="p">;</span>                         <span class="c1">#对多余的切片进行删除。</span>
+            hls_nested on<span class="p">;</span>                          <span class="c1">#嵌套模式。</span>
+ 
+        <span class="o">}</span>        
+</code></pre></td></tr></table>
+</div>
+</div><p>添加后如下
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124130607.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124130607.png, https://gitee.com/lizilong1993/image/raw/master/20210124130607.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124130607.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124130607.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124130607.png" /></p>
+<p>接着我们再将另外一项配置增加到HTTP服务中，这个是用来监控我们的推流状态的，如果不配置我们就不方便监控推流的状态；我们容器映射到外面的http端口为<strong>8082</strong>，所以这里我们也把NGINX里面的HTTP端口也改为<strong>8082</strong>，这样我们才可以访问到
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124150700.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124150700.png, https://gitee.com/lizilong1993/image/raw/master/20210124150700.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124150700.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124150700.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124150700.png" />
+然后，添加配置项如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">    location /stat <span class="o">{</span>
+        rtmp_stat all<span class="p">;</span>
+        rtmp_stat_stylesheet stat.xsl<span class="p">;</span>
+    <span class="o">}</span>
+ 
+    location /stat.xsl <span class="o">{</span>
+       root /nginx-http-flv-module-master/<span class="p">;</span>
+   <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>增加配置之后，如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124133817.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124133817.png, https://gitee.com/lizilong1993/image/raw/master/20210124133817.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124133817.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124133817.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124133817.png" />
+在上图中可以看到，上面有一个配置路径是/nginx-http-flv-module-master/这是我们开始下载源码解压的位置，如果你解压的位置不是这个，就需要将这里改成你解压的位置。</p>
+<p>设置好nginx配置之后，我们保存并退出，然后你重启nginx服务器，让刚才的配置生效,重启的命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/local/nginx/sbin/nginx -s reload
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124133941.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124133941.png, https://gitee.com/lizilong1993/image/raw/master/20210124133941.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124133941.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124133941.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124133941.png" />
+在上图中可以看到重启没有报错，说明我们的配置没有出现语法错误，并且重启已经成功了。</p>
+<h3 id="32-obs推流">3.2 OBS推流</h3>
+<p>在上面nginx配置完成之后，其实直播服务已经搭建完成了，但是我们还需要验证一下，最简单的方式就是推流然后去拉流播放，推流我们一般使用obs进行推流，官网地址如下所示
+<a href="https://obsproject.com/" target="_blank" rel="noopener noreffer">https://obsproject.com/</a>
+把OBS下载并安装好之后，打开界面如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124134135.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124134135.png, https://gitee.com/lizilong1993/image/raw/master/20210124134135.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124134135.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124134135.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124134135.png" /></p>
+<p>点击下图加号添加媒体源
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124134321.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124134321.png, https://gitee.com/lizilong1993/image/raw/master/20210124134321.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124134321.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124134321.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124134321.png" /></p>
+<p>我这里选的是笔记本摄像头
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124134443.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124134443.png, https://gitee.com/lizilong1993/image/raw/master/20210124134443.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124134443.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124134443.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124134443.png" /></p>
+<p>接着点击下图右侧的<strong>开始推流</strong>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124134516.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124134516.png, https://gitee.com/lizilong1993/image/raw/master/20210124134516.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124134516.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124134516.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124134516.png" /></p>
+<p>然后选择<strong>推流</strong>，填写服务器地址和串流密钥，我这里随便填的test。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124134741.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124134741.png, https://gitee.com/lizilong1993/image/raw/master/20210124134741.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124134741.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124134741.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124134741.png" />
+服务器地址+串联密钥就是你推流到服务器的地址。
+设置好之后点击下方的确定，然后回到主窗口中点击开始推流按钮，就会开始推流，如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124150955.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124150955.png, https://gitee.com/lizilong1993/image/raw/master/20210124150955.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124150955.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124150955.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124150955.png" />
+在上图中可以下方的状态栏可以看到已经在开始推流了，其中的LIVE后面的为当期推流持续时间，CPU后面的百分比代表推流占用了多少CUP资源，在客户端显示推流成功之后，我们可以通过浏览器访问推流监控页面，地址如下所示
+http://125.220.153.38:8082/stat</p>
+<p>浏览器打开监控页面，返回的信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124151051.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124151051.png, https://gitee.com/lizilong1993/image/raw/master/20210124151051.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124151051.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124151051.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124151051.png" /></p>
+<h3 id="33-vlc拉流">3.3 VLC拉流</h3>
+<p>打开VLC，选择<em>媒体——&gt;打开网络串流</em>，填入刚刚OBS推流的地址+串联密钥，也就是下图
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124151204.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124151204.png, https://gitee.com/lizilong1993/image/raw/master/20210124151204.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124151204.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124151204.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124151204.png" /></p>
+<p>结果如下
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124151519.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124151519.png, https://gitee.com/lizilong1993/image/raw/master/20210124151519.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124151519.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124151519.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124151519.png" /></p>
+<p>在上图中可以看到已经开始播放我刚才推送上去的视频了。</p>
+<p>目测两者之前有大约3-5s的延迟。</p>
+<h3 id="34-直播转录播">3.4 直播转录播</h3>
+<p>如果我们需要将推流的视频存保留下来将来用作回放，并不需要特意配置，因为nginx-http-flv-module-master模块已经帮我们保存了，保存的位置是在nginx配置中hls_path项设置的位置，我们通过CD命令查看一下，执行命令如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /opt/video/rtmp/hls/test1 <span class="o">&amp;&amp;</span> ls
+</code></pre></td></tr></table>
+</div>
+</div><p>命令执行之后，返回的文件列表信息如下图所示
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lizilong1993/image/raw/master/20210124151916.png"
+        data-srcset="https://gitee.com/lizilong1993/image/raw/master/20210124151916.png, https://gitee.com/lizilong1993/image/raw/master/20210124151916.png 1.5x, https://gitee.com/lizilong1993/image/raw/master/20210124151916.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lizilong1993/image/raw/master/20210124151916.png"
+        title="https://gitee.com/lizilong1993/image/raw/master/20210124151916.png" /></p>
+<p>在上图中可以看到TS片，到此我们通过nginx+rtmp搭建直播服务已经完成了。</p>
+<h2 id="ref">参考文献</h2>
+<blockquote>
+<p>视频流协议</p>
+</blockquote>
+<p>[1] <a href="https://www.jianshu.com/p/32417d8ee5b6" target="_blank" rel="noopener noreffer">理解RTMP、HttpFlv和HLS的正确姿势</a></p>
+<blockquote>
+<p>搭建视频服务器</p>
+</blockquote>
+<p>[2] <a href="https://blog.csdn.net/weixin_39822629/article/details/110488219" target="_blank" rel="noopener noreffer">Ubuntu中使用Nginx+rtmp模块搭建流媒体视频点播服务</a></p>
+<p>[3] <a href="https://blog.csdn.net/u013431141/article/details/103768139?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control" target="_blank" rel="noopener noreffer">Ubuntu中使用Nginx+rtmp搭建流媒体直播服务</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-11-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/video-live-stream-or-vod/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>,&nbsp;<a href="/tags/video/">video</a>,&nbsp;<a href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>,&nbsp;<a href="/tags/%E7%82%B9%E6%92%AD/">点播</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/basic-markdown-syntax/" class="prev" rel="prev" title="[转载]Markdown 基本语法"><i class="fas fa-angle-left fa-fw"></i>[转载]Markdown 基本语法</a>
+            <a href="/build-hugo-with-loveit-basic/" class="next" rel="next" title="基于Hugo&#43;LoveIt&#43;Gitee搭建个人博客[详细版]">基于Hugo&#43;LoveIt&#43;Gitee搭建个人博客[详细版]<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lioyd Shaw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer>
+ 
+
+
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"uefnzaEGhgPRfPDaRNWQ3MF4-MdYXbMMI","appKey":"4aOKu9jSOSSr2sL3DAec7Rkn","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"留一个友善的评论吧","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

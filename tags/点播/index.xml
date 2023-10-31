@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>点播 - 标签 - 难知如阴</title>
+        <link>https://skydominate.github.io/tags/%E7%82%B9%E6%92%AD/</link>
+        <description>点播 - 标签 - 难知如阴</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
+            <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 04 Feb 2021 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://skydominate.github.io/tags/%E7%82%B9%E6%92%AD/" rel="self" type="application/rss+xml" /><item>
+    <title>视频流服务器搭建[简单版]</title>
+    <link>https://skydominate.github.io/video-live-stream-or-vod/</link>
+    <pubDate>Thu, 04 Feb 2021 21:57:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/video-live-stream-or-vod/</guid>
+    <description><![CDATA[1 视频流介绍 1.1视频流协议 几种不同视频流协议的优缺点如下[1]： 三种协议总结 1.2 直播点播框架 分流+水印的直播系统拓扑图 2 视频流点播服务器搭建]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>博客美化 - 标签 - 难知如阴</title>
+        <link>https://skydominate.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</link>
+        <description>博客美化 - 标签 - 难知如阴</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
+            <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Nov 2021 02:26:40 &#43;0800</lastBuildDate><atom:link href="https://skydominate.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" rel="self" type="application/rss+xml" /><item>
+    <title>[博客美化]添加live2D看板娘</title>
+    <link>https://skydominate.github.io/live2d/</link>
+    <pubDate>Mon, 08 Nov 2021 02:26:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/live2d/</guid>
+    <description><![CDATA[<h2 id="abstract">1 简介</h2>
+<p>给你的博客添加一个live2D看板娘~~😉</p>]]></description>
+</item></channel>
+</rss>

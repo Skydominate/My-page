@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>好书好文 - 分类 - 难知如阴</title>
+        <link>https://skydominate.github.io/categories/book/</link>
+        <description>好书好文 - 分类 - 难知如阴</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
+            <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 16 Nov 2021 17:42:59 &#43;0800</lastBuildDate><atom:link href="https://skydominate.github.io/categories/book/" rel="self" type="application/rss+xml" /><item>
+    <title>名人名言</title>
+    <link>https://skydominate.github.io/excerpt-and-essay/</link>
+    <pubDate>Tue, 16 Nov 2021 17:42:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/excerpt-and-essay/</guid>
+    <description><![CDATA[<p><em><strong>记录一下我觉得有意思的名人名言和典故。</strong></em></p>]]></description>
+</item><item>
+    <title>好书推荐</title>
+    <link>https://skydominate.github.io/book-recommended/</link>
+    <pubDate>Thu, 04 Nov 2021 09:08:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/book-recommended/</guid>
+    <description><![CDATA[<p><em><strong>记录一下我遇到的有益、有意思或打发时间的书或文。</strong></em></p>
+<p>这里面有穿越者必备的三大神书，有各种令人头大的工具书，当然还有纯粹的爽文<i class="far fa-grin-squint-tears"></i>。</p>]]></description>
+</item></channel>
+</rss>

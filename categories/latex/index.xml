@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Latex - 分类 - 难知如阴</title>
+        <link>https://skydominate.github.io/categories/latex/</link>
+        <description>Latex - 分类 - 难知如阴</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
+            <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://skydominate.github.io/categories/latex/" rel="self" type="application/rss+xml" /><item>
+    <title>Latex 导言区</title>
+    <link>https://skydominate.github.io/latex-package/</link>
+    <pubDate>Fri, 24 Dec 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/latex-package/</guid>
+    <description><![CDATA[title: &ldquo;Latex 导言区&rdquo; date: 2021-12-24T02:26:40+08:00 lastmod: 2023-10-30T02:26:40+08:00 draft: false author: &ldquo;Lioyd Shaw&rdquo; authorLink: &quot;&quot; description: &ldquo;Latex 参考文献及宏包使用&rdquo; resources: name: &ldquo;featured-image&rdquo; src: &ldquo;featured-image.jpg&rdquo; name: &ldquo;featured-image-preview&rdquo; src: &ldquo;featured-image-preview.jpg&rdquo; tags: [&ldquo;Latex&rdquo;,&ldquo;syntax&rdquo;] categories: [&ldquo;documentation&rdquo;] toc: enable: true auto: false lightgallery: true mapbox: lightStyle: mapbox://styles/mapbox/light-zh-v1?optimize=true darkStyle: mapbox://styles/mapbox/dark-zh-v1?optimize=true 宏包简介]]></description>
+</item></channel>
+</rss>
