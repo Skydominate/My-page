@@ -16,7 +16,7 @@
                     href="https://skydominate.github.io/categories/documentation/"
                     /></url><url>
             <loc>https://skydominate.github.io/latex-package/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://skydominate.github.io/categories/book/</loc><lastmod>2021-11-18T09:52:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://skydominate.github.io/categories/book/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://skydominate.github.io/en/categories/book/"
@@ -42,11 +42,8 @@
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/categories/basic/"
                     /></url><url>
-            <loc>https://skydominate.github.io/excerpt-and-essay/</loc><lastmod>2021-11-16T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://skydominate.github.io/excerpt-and-essay/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/book-recommended/</loc><lastmod>2021-11-18T09:52:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/valine/</loc><lastmod>2021-11-04T17:01:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/build-hugo-with-loveit/</loc><lastmod>2021-11-03T12:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/build-hugo-with-loveit-basic/</loc><lastmod>2021-11-03T12:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://skydominate.github.io/theme-documentation-basics/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -105,7 +102,7 @@
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/about/"
                     /></url><url>
-            <loc>https://skydominate.github.io/categories/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://skydominate.github.io/categories/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://skydominate.github.io/en/categories/"
@@ -119,7 +116,7 @@
                     href="https://skydominate.github.io/categories/"
                     /></url><url>
             <loc>https://skydominate.github.io/tags/latex/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://skydominate.github.io/posts/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://skydominate.github.io/posts/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://skydominate.github.io/en/posts/"
@@ -129,7 +126,7 @@
                     href="https://skydominate.github.io/posts/"
                     /></url><url>
             <loc>https://skydominate.github.io/tags/syntax/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://skydominate.github.io/tags/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://skydominate.github.io/tags/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://skydominate.github.io/en/tags/"
@@ -142,7 +139,7 @@
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/tags/"
                     /></url><url>
-            <loc>https://skydominate.github.io/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://skydominate.github.io/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://skydominate.github.io/en/"
@@ -155,19 +152,11 @@
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/"
                     /></url><url>
-            <loc>https://skydominate.github.io/tags/%E5%85%B8%E6%95%85/</loc><lastmod>2021-11-16T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80/</loc><lastmod>2021-11-16T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/synergy/</loc><lastmod>2021-11-07T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/synergy/</loc><lastmod>2021-11-07T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/%E7%A5%9E%E5%99%A8%E6%8E%A8%E8%8D%90/</loc><lastmod>2021-11-07T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://skydominate.github.io/tags/ref/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://skydominate.github.io/tags/%E5%86%99%E4%BD%9C/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/tags/%E5%B7%A5%E5%85%B7%E4%B9%A6/</loc><lastmod>2021-11-18T09:52:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://skydominate.github.io/tags/%E7%88%BD%E6%96%87/</loc><lastmod>2021-11-18T09:52:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://skydominate.github.io/tags/%E7%A5%9E%E4%B9%A6/</loc><lastmod>2021-11-18T09:52:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/valine/</loc><lastmod>2021-11-04T17:01:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/valine-admin/</loc><lastmod>2021-11-04T17:01:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2021-11-04T17:01:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/%E6%95%99%E7%A8%8B/</loc><lastmod>2021-11-04T17:01:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://skydominate.github.io/tags/hugo/</loc><lastmod>2021-11-03T12:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://skydominate.github.io/tags/installation/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"

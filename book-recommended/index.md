@@ -5,13 +5,10 @@
 
 这里面有穿越者必备的三大神书，有各种令人头大的工具书，当然还有纯粹的爽文:(far fa-grin-squint-tears):。
 
-
-
 <!--more-->
 
 {{< admonition warning "侵权必删" false>}}
- 本文档只为记录个人遇到的好书，如若侵权请务必在评论区或直接联系我lizilong@whu.edu.cn删除！
-
+ 本文档只为记录个人遇到的好书，如若侵权请务请联系作者删除！
 {{< /admonition >}}
 
 ## 1 神书{#god}
@@ -68,8 +65,7 @@
 [下载链接](https://gitee.com/lizilong1993/image/raw/master/202111180934100.pdf)
 
 {{< admonition warning "侵权必删" true>}}
- 作者写书不易，请有能力的同学购买正版书籍，此处如若侵权请务必在评论区或直接联系我lizilong@whu.edu.cn删除！
-
+ 作者写书不易，请有能力的同学购买正版书籍
 {{< /admonition >}}
 
 ## 3 爽文 {#happy}
@@ -98,9 +94,6 @@
 
 未完待续，欢迎补充！:(far fa-laugh-beam):
 
-
-
-觉得有帮助，麻烦顺手给我[点个Star](https://gitee.com/lizilong1993/lizilong1993)吧 or [Buy me a coffee](https://lizilong1993.gitee.io/about/)
 
 ## 参考资料{#ref}
 
