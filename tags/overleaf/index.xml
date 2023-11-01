@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>overleaf - 标签 - 难知如阴</title>
+        <link>https://skydominate.github.io/tags/overleaf/</link>
+        <description>overleaf - 标签 - 难知如阴</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
+            <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Dec 2021 02:26:40 &#43;0800</lastBuildDate><atom:link href="https://skydominate.github.io/tags/overleaf/" rel="self" type="application/rss+xml" /><item>
+    <title>多文件 Latex 项目</title>
+    <link>https://skydominate.github.io/latex-project/</link>
+    <pubDate>Fri, 24 Dec 2021 02:26:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/latex-project/</guid>
+    <description><![CDATA[<p><em><strong>多项目论文latex写作技巧</strong></em></p>]]></description>
+</item></channel>
+</rss>

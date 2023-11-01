@@ -2,6 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://skydominate.github.io/approximation-introduction/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/categories/documentation/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -17,6 +18,7 @@
                     /></url><url>
             <loc>https://skydominate.github.io/latex-package/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/latex-bib/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://skydominate.github.io/latex-project/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/categories/book/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -103,6 +105,8 @@
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/about/"
                     /></url><url>
+            <loc>https://skydominate.github.io/tags/algorithm/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://skydominate.github.io/tags/approximation/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/categories/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -117,6 +121,7 @@
                     href="https://skydominate.github.io/categories/"
                     /></url><url>
             <loc>https://skydominate.github.io/tags/latex/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://skydominate.github.io/tags/overleaf/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://skydominate.github.io/posts/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -139,6 +144,19 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/tags/"
+                    /></url><url>
+            <loc>https://skydominate.github.io/tags/content/</loc><lastmod>2023-10-30T02:26:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://skydominate.github.io/en/tags/content/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://skydominate.github.io/fr/tags/content/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://skydominate.github.io/tags/content/"
                     /></url><url>
             <loc>https://skydominate.github.io/</loc><lastmod>2023-10-31T17:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -184,19 +202,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://skydominate.github.io/tags/markdown/"
-                    /></url><url>
-            <loc>https://skydominate.github.io/tags/content/</loc><lastmod>2020-03-05T16:30:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://skydominate.github.io/en/tags/content/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://skydominate.github.io/fr/tags/content/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://skydominate.github.io/tags/content/"
                     /></url><url>
             <loc>https://skydominate.github.io/tags/shortcodes/</loc><lastmod>2020-03-03T16:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

@@ -208,5 +208,7 @@
 ```
 
 > *参考资料*
+> 
 > [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/#:~:text=Here%20is%20a%20complete%20listing%20of%20the%20BibTeX,paper%20%28same%20as%20the%20conference%20entry%20type%29%20%E6%9B%B4%E5%A4%9A%E9%A1%B9%E7%9B%AE)
+> 
 > [The 14 BibTeX entry types](https://www.bibtex.com/e/entry-types/)
