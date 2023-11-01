@@ -25,7 +25,7 @@ P=NP $\Rightarrow$ efficient algorithm: polynomial in input size
 
 ---
 
-{{< admonition >}}
+{{< admonition tip >}}
 
 The aims is mathematical rigor in the analysis of our algorithms, content with notion of worst-case analysis. The worst-case bounds are often due to pathological cases that do not arise in practice, so that approximation algorithms often give rise to heuristics that return solutions much closer to optimal than indicated.
 
@@ -35,13 +35,11 @@ The aims is mathematical rigor in the analysis of our algorithms, content with n
 
 ***Set Cover Problem:*** Given a ground set of elements $E=\{e_1,e_2,...,e_n\}$, some subsets of those elements $S_1,...,S_m$ where each $S_j\subseteq E$, and a nonnegative weight $w_j\geq 0$ for each subset $S_j$. The goal is to find a minimum-weight collection of subset that covers all of $E$
 
-$$
-\begin{aligned}
+\begin{align*}
     \text{minimize} \quad & \sum_{j\in I} w_j \\
     \text{subject to}\quad & \bigcup_{j\in I} S_j=E \\
     & I\subseteq \{1,...,m\}
-\end{aligned}
-$$
+\end{align*}
 
 - the development of an antivirus product;
 - the vertex cover problem
@@ -68,13 +66,11 @@ $$f=\max_{i=1,\dots,n} |\{j:e_i\in S_j\}|$$
 
 Each element $e_i$ is charged a price $y_i\geq 0$
 
-$$
-\begin{aligned}
+\begin{align*}
     \text{maximize}\quad & \sum_{i=1}^n y_i\\
     \text{subject to}\quad & \sum_{i:e_i\in S_j} y_i \leq w_j, \quad j=1,\dots,m \\
     & y_i\geq 0
-\end{aligned}
-$$
+\end{align*}
 
 - *weak duality:* $\sum_{i=1}^n y_i \leq Z_{LP}^* \leq OPT$
 - *strong duality:* $\sum_{j=1}^m w_j x_j^* = \sum_{j=1}^n y_j^*$

@@ -60,6 +60,19 @@
                     hreflang="en"
                     href="https://skydominate.github.io/en/about/"
                     /></url><url>
+            <loc>https://skydominate.github.io/en/categories/basic/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://skydominate.github.io/categories/basic/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://skydominate.github.io/fr/categories/basic/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://skydominate.github.io/en/categories/basic/"
+                    /></url><url>
             <loc>https://skydominate.github.io/en/categories/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -81,19 +94,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://skydominate.github.io/en/tags/configuration/"
-                    /></url><url>
-            <loc>https://skydominate.github.io/en/categories/documentation/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://skydominate.github.io/categories/documentation/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://skydominate.github.io/fr/categories/documentation/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://skydominate.github.io/en/categories/documentation/"
                     /></url><url>
             <loc>https://skydominate.github.io/en/tags/installation/</loc><lastmod>2020-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -170,19 +170,6 @@
                     hreflang="en"
                     href="https://skydominate.github.io/en/tags/shortcodes/"
                     /></url><url>
-            <loc>https://skydominate.github.io/en/categories/basic/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://skydominate.github.io/categories/basic/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://skydominate.github.io/fr/categories/basic/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://skydominate.github.io/en/categories/basic/"
-                    /></url><url>
             <loc>https://skydominate.github.io/en/tags/html/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -213,4 +200,17 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://skydominate.github.io/en/categories/book/"
+                    /></url><url>
+            <loc>https://skydominate.github.io/en/categories/documentation/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://skydominate.github.io/categories/documentation/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://skydominate.github.io/fr/categories/documentation/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://skydominate.github.io/en/categories/documentation/"
                     /></url></urlset>
