@@ -9,13 +9,15 @@
 
 ## 1 线性规划的标准形式
 
-
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \min \quad& c^Tx \\
     s.t. \quad & Ax\leq b \\
     & x\geq 0
-\end{align*}
-
+\end{aligned}
+$$
+</div>
 
 对于非标准的线性规划
 - 如果是 max，则乘 $-1$ 后求 min
@@ -40,25 +42,32 @@
 
 对于初始问题，将其松弛为
 
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \min \quad& -x_1-14x_2-6x_3  & \\
     s.t. \quad & x_1+x_2+x_3+x_4 & =4 \\
     & x_1 \hspace{7em} +x_5 & =2 \\
     & \hspace{4.5em} x_3 \hspace{5em} +x_6 & =3 \\
     & \hspace{1.8em} 3x_2 + x_3 \hspace{7.5em} +x_7 & =6 \\
     & x_1,\hspace{0.9em} x_2, \hspace{0.8em} x_3, \hspace{0.6em} x_4, \hspace{1.2em} x_5, \hspace{1.1em} x_6, \hspace{1em} x_7 & \geq 0
-\end{align*}
+\end{aligned}
+$$
+</div>
 
 
 可以得到下面的矩阵
 
+<div>
 $$
 C=
 \left(\begin{matrix}
     -1 & -14 & -6 & 0 & 0 & 0 & 0
 \end{matrix}\right)
 $$
+</div>
 
+<div>
 $$
 B=
 \left(\begin{matrix}
@@ -72,9 +81,11 @@ B=
     0 & 3 & 1 & 0 & 0 & 0 & 1 \\
 \end{matrix}\right)
 $$
+</div>
 
 将其合并成矩阵
 
+<div>
 $$
 S_1=
 \left(\begin{matrix}
@@ -82,36 +93,41 @@ S_1=
     B \quad A
 \end{matrix}\right)
 $$
-
+</div>
 
 其中，$S_1[0][0]$ 为目标值 $z=0$。
 
 接下来寻找换入换出变量，将矩阵 $S_1$ 写为基变量 $=$ 非基变量的形式
 
-
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     z &= -x_1-14x_2-6x_3 \\
     x_4 & = 4-x_1-x_2-x_3 \\
     x_5 &= 2-x_1 \\
     x_6 & =3-x_3 \\
     x_7 & =6-3x_2-x_3
-\end{align*}
-
+\end{aligned}
+$$
+</div>
 
 目标值 $z$ 等于所有非基变量为 $0$ 时的最小值。找到换入变量 $x_2$，因为令 $x_2$ 增大能更大程度的使目标值 $z$ 减小。对于四个基变量约束条件，可以得到约束最紧的为 $x_7$。将所有的换入变量 $x_2$ 替换为 $2-x_7/3-x_3/3$，可以得到
 
-
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     z &= -28-x_1+\frac{14}{3}x_7-\frac{4}{3}x_3 \\
     x_4 & = 2-x_1+\frac{1}{3}x_7-\frac{2}{3}x_3 \\
     x_5 &= 2-x_1 \\
     x_6 & =3-x_3 \\
     x_2 & =2-\frac{1}{3}x_7-\frac{1}{3}x_3
-\end{align*}
-
+\end{aligned}
+$$
+</div>
 
 此时的矩阵表示为
 
+<div>
 $$
 S_2=
 \left(\begin{matrix}
@@ -122,6 +138,7 @@ S_2=
     2 & 0 & 1 & 1/3 & 0 & 0 & 0 & 1/3 \\
 \end{matrix}\right)
 $$
+</div>
 
 $S_1$ 变为 $S_2$ 的过程可以表示为：对第五行，有 $S_2[4][j]=S_1[4][j]/S_1[4][2]$；对其他行，有
 $$
@@ -134,12 +151,16 @@ $$
 
 但是上述的步骤会出现问题，如果有某一分量 $b_j<0$，则初始解为非可行解。例如
 
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \min \quad & x_1+2x_2 & \\
     s.t. \quad & x_1+x_2 &\leq 2 \\
     & x_1+x_2 &\geq 1 \\
     & x_1,x_2 &\geq 0
-\end{align*}
+\end{aligned}
+$$
+</div>
 
 此时初始解为 $X=\{0,0,2,-1\}$ 不是可行解。在本例中，由于目标函数中不存在负分量，迭代直接停止。所以需要找到初始基可行解。
 
@@ -147,12 +168,16 @@ $$
 
 在上述的例子中，构造一个辅助线性规划 (auxiliary linear program)，如下
 
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \min \quad & x_0 && \\
     s.t.\quad & x_1+x_2 - x_0 && \leq 2 \\
     & -x_1 - x_2 - x_0 && \leq -1 \\
     & x_1,x_2,x_0 && \geq 0
-\end{align*}
+\end{aligned}
+$$
+</div>
 
 如果这个辅助线性规划 $L_{aux}$ 最优解为 $0$，则证明原线性规划问题 $L$ 有解。否则，原问题也不存在最优解。
 
@@ -168,6 +193,7 @@ Conversely, suppose that the optimal objective value of $L_{aux}=0$. Then $x_0=0
 
 如果能够得到 $L_{aux}$ 的最优值为 $0$，则可以用最终 $L_{aux}$ 的基变量替换原问题的基变量，即直接将矩阵中含有 $x_0$ 的列去掉 (**如果 $x_0$ 是基变量，则将其与任意非基变量进行换出**)，并修改目标函数行
 
+<div>
 $$
 S=
 \left(\begin{array}{c|r|rrrr}
@@ -181,6 +207,7 @@ S=
     1 &  1 & 1 & 0 & -1 \\
 \end{matrix}\right)
 $$
+</div>
 
 ## 6 代码实现
 
@@ -234,6 +261,7 @@ class Simplex(object):
 
 设当前的顶点为 $x$，下一个顶点为按照方向为 $\lambda$ 的边走长度 $\theta$，然后可以找到新的顶点 $x'=x+\theta\lambda$。体现在约束矩阵 $A$ 中即为用基变量的列约束的线性组合得到换入变量的列约束的权重向量。还是用最初的例子，
 
+<div>
 $$
 A=(A_1;\dots;A_7)=
 \left(\begin{matrix}
@@ -243,8 +271,10 @@ A=(A_1;\dots;A_7)=
     0 & 3 & 1 & 0 & 0 & 0 & 1 \\
 \end{matrix}\right)
 $$
+</div>
 
 用图表示为：
+
 ![单纯形](https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image115.jpg)
 
 初始的顶点为 $(0,0,0,4,2,3,6)$， 此时换入变量为 $x_2$，基变量为 $x_4,x_5,x_6,x_7$。用基变量的列约束表示换入变量的列约束，即为 $A_2=A_4+3A_7$，得到 $\lambda=(0,1,0,-1,0,0,-3)$。长度 $\theta$ 即为约束最紧的值 $\theta=\min\{S_1[i][0]/S_1[i][2]:i\in [1,7]\}=2$。因此，下一个遍历的顶点为 $(0,2,0,2,2,3,0)$，即沿着换入变量 $x_2$ 的方向到了下一个顶点。
@@ -255,7 +285,7 @@ ___
 
 如果可行域并不是凸紧集，则可以用其 convex hull 来代替原可行域，同样可以得出最优解。
 
-{{< admonition tip >}}
+{{< admonition tip "证明" false>}}
 
 Let $s\in D$ is the optimal solution of $\min_{y\in D}c^Ty$, in which $D=conv(V)$, $V$ is the feasible region of LP. Then there is $s=\sum_{i=1}^k\alpha_i v_i$, means that $s$ is the weighted average of some finite set of "vertices" $v_1,\dots,v_k\in V$, with $\alpha_i\geq 0,\sum_i \alpha_i=1$. By linearity of the inner product
 $$
@@ -275,12 +305,16 @@ $$
 
 但是 V. Klee and G. L. Minty[1972] 构造了一个例子：
 
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \max \quad & x_n & & \\
     s.t.\quad & \delta & \leq x_i & \leq 1 \\
     & \delta x_{i-1} & \leq x_i & \leq 1-\delta x_{i-1} \\
     & & x_i &\geq 0
-\end{align*}
+\end{aligned}
+$$
+</div>
 
 在这个例子中，单纯形算法要遍历 $2^n$ 个顶点。根据这个例子，可以得到单纯形算法不是一个多项式时间复杂度的算法。2001年 Daniel A. Spielman 和 Shang-Hua Teng 提出了平滑型复杂度理论 (smoothed complexity)，解决了单纯形算法在实际运行时是多项式时间平滑复杂度的。
 

@@ -25,7 +25,7 @@ P=NP $\Rightarrow$ efficient algorithm: polynomial in input size
 
 ---
 
-{{< admonition tip >}}
+{{< admonition tip "为什么是近似算法？" false>}}
 
 The aims is mathematical rigor in the analysis of our algorithms, content with notion of worst-case analysis. The worst-case bounds are often due to pathological cases that do not arise in practice, so that approximation algorithms often give rise to heuristics that return solutions much closer to optimal than indicated.
 
@@ -35,15 +35,18 @@ The aims is mathematical rigor in the analysis of our algorithms, content with n
 
 ***Set Cover Problem:*** Given a ground set of elements $E=\{e_1,e_2,...,e_n\}$, some subsets of those elements $S_1,...,S_m$ where each $S_j\subseteq E$, and a nonnegative weight $w_j\geq 0$ for each subset $S_j$. The goal is to find a minimum-weight collection of subset that covers all of $E$
 
-\begin{align*}
+<div>
+$$
+\begin{aligned}
     \text{minimize} \quad & \sum_{j\in I} w_j \\
     \text{subject to}\quad & \bigcup_{j\in I} S_j=E \\
     & I\subseteq \{1,...,m\}
-\end{align*}
+\end{aligned}
+$$
+</div>
 
 - the development of an antivirus product;
 - the vertex cover problem
-
 
 $$
 Z_{IP}^*=OPT
