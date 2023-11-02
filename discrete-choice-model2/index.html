@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>小组会——离散选择模型(二) - 难知如阴</title><meta name="Description" content="Discrete Choice Models"><meta property="og:title" content="小组会——离散选择模型(二)" />
+<meta property="og:description" content="Discrete Choice Models" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skydominate.github.io/discrete-choice-model2/" /><meta property="og:image" content="https://skydominate.github.io/discrete-choice-model2/featured-image.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-24T02:26:40+08:00" />
+<meta property="article:modified_time" content="2023-10-30T02:26:40+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://skydominate.github.io/discrete-choice-model2/featured-image.jpg"/>
+<meta name="twitter:title" content="小组会——离散选择模型(二)"/>
+<meta name="twitter:description" content="Discrete Choice Models"/>
+<meta name="application-name" content="难知如阴">
+<meta name="apple-mobile-web-app-title" content="难知如阴"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://skydominate.github.io/discrete-choice-model2/" /><link rel="prev" href="https://skydominate.github.io/latex-package/" /><link rel="next" href="https://skydominate.github.io/discrete-choice-model/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "小组会——离散选择模型(二)",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/skydominate.github.io\/discrete-choice-model2\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/skydominate.github.io\/discrete-choice-model2\/featured-image.jpg",
+                            "width":  800 ,
+                            "height":  400 
+                        }],"genre": "posts","keywords": "assortment, content","wordcount":  1408 ,
+        "url": "https:\/\/skydominate.github.io\/discrete-choice-model2\/","datePublished": "2021-12-24T02:26:40+08:00","dateModified": "2023-10-30T02:26:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Lioyd Shaw","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/skydominate.github.io\/images\/shadow.jpg",
+                    "width":  1024 ,
+                    "height":  576 
+                }},"author": {
+                "@type": "Person",
+                "name": "Lioyd Shaw"
+            },"description": "Discrete Choice Models"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="难知如阴"><span class="header-title-pre"><i class='fas fa-theater-masks fa-fw'></i></span>难知如阴</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/discrete-choice-model2/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="难知如阴"><span class="header-title-pre"><i class='fas fa-theater-masks fa-fw'></i></span>难知如阴</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/discrete-choice-model2/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">小组会——离散选择模型(二)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lioyd Shaw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-24">2021-12-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1408 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/discrete-choice-model2/" class="leancloud_visitors" data-flag-title="小组会——离散选择模型(二)">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/discrete-choice-model2/featured-image.jpg"
+        data-srcset="/discrete-choice-model2/featured-image.jpg, /discrete-choice-model2/featured-image.jpg 1.5x, /discrete-choice-model2/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/discrete-choice-model2/featured-image.jpg"
+        title="Discrete Choice Models" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-gumble-分布">1 Gumble 分布：</a></li>
+    <li><a href="#2-mnl的优点">2 MNL的优点</a>
+      <ul>
+        <li><a href="#21-assortment-problem-under-mnl">2.1 Assortment Problem under MNL</a></li>
+        <li><a href="#22-quality-consistent-pricing">2.2 Quality Consistent Pricing</a></li>
+        <li><a href="#23-iterative-constraint-generation">2.3 Iterative constraint generation</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-other-choice-model">3 Other Choice Model</a>
+      <ul>
+        <li><a href="#31-multinomial-probit-mp-model">3.1 Multinomial-Probit (MP) Model</a></li>
+        <li><a href="#32-elimination-by-aspects-model">3.2 Elimination-by-Aspects Model</a></li>
+        <li><a href="#33-generalized-extreme-value-model">3.3 Generalized Extreme-Value Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dynamic-optimization-problem">4 Dynamic optimization problem</a>
+      <ul>
+        <li><a href="#41-multi-armed-bandit-problem-mbp">4.1 Multi-armed Bandit Problem (MBP)</a></li>
+        <li><a href="#42-static-mnl-algorithm">4.2 STATIC MNL algorithm</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-single-leg-reserve-management-problem">5 Single-leg reserve management problem</a>
+      <ul>
+        <li><a href="#51-optimization">5.1 Optimization</a></li>
+        <li><a href="#52-nested-by-fare-property">5.2 Nested-by-fare property</a></li>
+        <li><a href="#53-estimation">5.3 Estimation</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-multiproduct-price-optimization-under-nl-model">6 Multiproduct Price Optimization Under NL Model</a>
+      <ul>
+        <li><a href="#61-constant-adjusted-markup">6.1 Constant Adjusted Markup</a></li>
+        <li><a href="#62-oligopolistic-competition">6.2 Oligopolistic Competition</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><em><strong>经典消费者离散选择模型介绍(第二期)</strong></em></p>
+<h2 id="1-gumble-分布">1 Gumble 分布：</h2>
+<p>广义极值分布：
+$$
+P(X&lt; x)=\exp(-[1+k(\frac{x-\mu}{\sigma})]^{-\frac{1}{k}})
+$$
+当 $k\rightarrow 0$ 时，分布成为gumbel分布，也叫做第一类极值分布，此时分布函数趋于双指数形式
+$$
+P(X&lt; x)=\exp(-\exp[-\frac{x-\mu}{\sigma}])
+$$</p>
+<ul>
+<li>mode is $\mu$</li>
+<li>affine transformation $\alpha x+\beta \sim gumble(\alpha \mu +\beta,\sigma/\alpha)$</li>
+<li>$\varepsilon_1 \sim gumble(\mu_1,\sigma)$ and $\varepsilon_2 \sim gumble(\mu_2,\sigma)$, then</li>
+</ul>
+<p>$$
+\varepsilon_1-\varepsilon_2 \sim logistics(\mu_1-\mu_2,\sigma)\quad \max{\varepsilon_1,\varepsilon_2} \sim gumble(\frac{1}{\sigma}log(e^{\sigma \mu_1}+e^{\sigma \mu_2}),\sigma)
+$$</p>
+<hr>
+<ol>
+<li>assortment problem under MNL</li>
+<li>pricing problem under MNL</li>
+<li>assortment problem with display location effects</li>
+<li>assortment problems with product precedence constraints</li>
+<li>quality consistent pricing problems</li>
+</ol>
+<p>这五种情况下的 constraint matrix 都是全单模的，即都可以将整数规划松弛为相应的线性规划</p>
+<hr>
+<h2 id="2-mnl的优点">2 MNL的优点</h2>
+<ul>
+<li>The parameters of MNL has a concave log likelihood function</li>
+</ul>
+<p>Its prototype is Luce model.
+$$
+P(i|z,\theta)=v(z_i,\theta)/\sum_{j=1}^Jv(z_j,\theta)
+$$</p>
+<h3 id="21-assortment-problem-under-mnl">2.1 Assortment Problem under MNL</h3>
+<p>Maximiza the expected revenue obtained from each customer. Yielding the problem</p>
+<div>
+$$
+\begin{aligned}
+  z^*=& \max_{x\in \{0,1\}^{|N|}}\frac{\sum_{j\in N}r_jv_jx_j}{1+\sum_{j\in N}v_jx_j} \\
+  s.t.\quad & \sum_{j\in N}a_{ij}x_j\leq b_i \quad \forall i\in M
+\end{aligned}
+$$
+</div>
+<p>The problem is equivalent to</p>
+<div>
+$$
+\begin{aligned}
+  & \max \quad  \sum_{j\in N}r_jw_j \\
+   s.t. \quad &  \sum_{j\in N}w_j+w_0=1 \\
+   & \sum_{j\in N}a_{ij}\frac{w_j}{v_j}\leq b_iw_0 \quad \forall i\in M \\
+   & 0\leq \frac{w_j}{v_j}\leq w_0 \quad \forall j\in N
+\end{aligned}
+$$
+</div>
+<h3 id="22-quality-consistent-pricing">2.2 Quality Consistent Pricing</h3>
+<p>The problem
+$$
+\max \frac{\sum_{j\in N}\sum_{k\in K}r_kv_{jk}x_{jk}}{1+\sum_{j\in N}\sum_{k\in K}v_{jk}x_{jk}}
+$$</p>
+<p>subject to constraints</p>
+<div>
+$$
+\begin{aligned}
+  x_{j1}+z_{j1} & =x_{j-1,1} \\
+  x_{jk}+z_{jk} & =x_{j-1,k} + z_{j,k-1} \\
+  x_{jm} & =x_{j-1,m}+z_{j,m-1} 
+\end{aligned}
+$$
+</div>
+<h3 id="23-iterative-constraint-generation">2.3 Iterative constraint generation</h3>
+<div>
+$$
+\begin{aligned}
+  \min \quad & t  \\
+  s.t. \quad &  f(x)-tg(x)\leq 0 \quad \forall x\in \mathcal{F}
+\end{aligned}
+$$
+</div>
+<ul>
+<li>At iteration $k$, consider a subset $\mathcal{F}^k$ of the constraints</li>
+<li>Solving problem $\min{t: f(x)-tg(x)\leq 0\ \forall x\in \mathcal{F}^k}$ and get the solution $t^k$</li>
+<li>Solving the constaint generation subproblem $\max_{x\in \mathcal{F}}f(x)-t^kg(x)$ to get the solution $x^k$
+<ul>
+<li>if $f(x^k)-t^kg(x^k)&gt; 0$, then the solution $t^k$ is violated to the problem. Need to consider $\mathcal{F}^{k+1}=\mathcal{F}^k \cup x^k$ and proceed the next iteration $k+1$</li>
+<li>if $f(x^k)-t^kg(x^k)\leq 0$, then $t^k$ is the optimal solution.</li>
+</ul>
+</li>
+</ul>
+<p>If $f(\cdot)$ and $g(\cdot)$ are linear function and constraints matrix in $\mathcal{F}$ is total unimodular, the optimal value can be obtained by linear problem.</p>
+<div>
+$$
+\begin{aligned}
+  \min \quad & t \\
+  s.t. \quad & \sum_{i\in M}b_i\mu_i +\sum_{j\in N}\eta_j +f_0-tg_0 \leq 0  \\
+  & \sum_{i\in M}a_{ij}\mu_i+\eta_j\geq f_j-tg_i  \quad  \forall j\in N  \\
+  & \mu_i,\eta_j \geq 0 \quad \forall i\in M,j\in N
+\end{aligned}
+$$
+</div>
+<h2 id="3-other-choice-model">3 Other Choice Model</h2>
+<h3 id="31-multinomial-probit-mp-model">3.1 Multinomial-Probit (MP) Model</h3>
+<p>From the random-utility model, and assume the utilities of alternatives to have a multivariate normal distribution.</p>
+<h3 id="32-elimination-by-aspects-model">3.2 Elimination-by-Aspects Model</h3>
+<p>Each alternative can be viewed as owning a set of aspects. Consumer selects an aspect at random, eliminates available alternatives which fail to own this aspect.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image101.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image101.jpg, https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image101.jpg 1.5x, https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image101.jpg 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Skydominate/image_bed@main/image101.jpg"
+        title="decision tree" /></p>
+<p>$$
+P(1|1,2,3)=\frac{v_1}{v_1+v_2+v_3+v_4}+\frac{v_4}{v_1+v_2+v_3+v_4}\frac{v_1}{v_1+v_2}
+$$</p>
+<h3 id="33-generalized-extreme-value-model">3.3 Generalized Extreme-Value Model</h3>
+<p>Different from Luce model, GEV model considers nonindependent extreme value distributions.
+$$
+P(1|1,2,3)=\frac{(v_1^{1/\rho}+v_2^{1/\rho})^\rho}{(v_1^{1/\rho}+v_2^{1/\rho})^\rho+v_3}\frac{v_1^{1/\rho}}{v_1^{1/\rho}+v_2^{1/\rho}}
+$$</p>
+<p>All parameters of GEV model can be estimated by the empirically practical  method of multinomial-logit estimation at each of the two nested levels of the decision tree.</p>
+<h2 id="4-dynamic-optimization-problem">4 Dynamic optimization problem</h2>
+<p>The parameters of the logit model are unknown and must be estimated from data.</p>
+<h3 id="41-multi-armed-bandit-problem-mbp">4.1 Multi-armed Bandit Problem (MBP)</h3>
+<p>MBP问题的难点是Exploitation-Exploration(E&amp;E)两难的问题：对已知的吐钱概率比较高的老虎机，应该更多的去尝试(exploitation)，以便获得一定的累计收益；对未知的或尝试次数较少的老虎机，还要分配一定的尝试机会（exploration），以免错失收益更高的选择，但同时较多的探索也意味着较高的风险（机会成本）。</p>
+<h3 id="42-static-mnl-algorithm">4.2 STATIC MNL algorithm</h3>
+<p>The profit optimization problem
+$$
+Z=\max{\frac{\sum_{i\in S}w_iv_i}{1+\sum_{i\in S}v_i}: S\subseteq N \ \text{and}\ |S|\leq C}
+$$</p>
+<p>is equivalent to</p>
+<div>
+$$
+\begin{aligned}
+  Z = & \max\{\lambda\in R:\exists X\subseteq N,|X|\leq C, f(X)\geq \lambda\}  \\
+  & = \max\{\lambda\in R:\max_{X:|X|\leq C} \sum_{i\in X}v_i(w_i-\lambda)\geq \lambda\}
+\end{aligned}
+$$
+</div>
+<p>Define a class of linear functions:</p>
+<div>
+$$
+\begin{aligned}
+  h_0(\lambda) & =0 \\
+  h_i(\lambda) & =v_i(w_i-\lambda)
+\end{aligned}
+$$
+</div>
+<p>there is at most $C_{N+1}^2$ intersection points among them. For any $\lambda$ between two consecutive intersection points, the ordering of the $h_j(\lambda)=v_j(w_j-\lambda)$ is constant. Therefore, to enumerate $\mathop{\arg\max}_{X:|X|\leq C}\sum_{i\in X}v_i(w_i-\lambda)$ for all $\lambda \in R$, it suffices to enumerate all intersection points. And the time complexity of STATIC MNL algorithm is $O(N^2)$.</p>
+<blockquote>
+<p>As long as the estimated orderings coincide with the true orderings, then the output of the STATIC MNL will be exactly the same as if the true $\pmb{v}$ is known</p>
+</blockquote>
+<ul>
+<li>If the capacity $C$ is fixed, finding the optimal assortment only need to search through $O(N)$ assortments, which is on the same order as the uncapacitated optimization problem.</li>
+</ul>
+<h2 id="5-single-leg-reserve-management-problem">5 Single-leg reserve management problem</h2>
+<p>Customer choice behavior, such as buy-up and but-down, is an important phenomenon in a wide range of revenue management contexts.</p>
+<p>A basic and simple assumption: customer demand for each of the fare products is completely indenpendent of the controls being applied by the seller.</p>
+<h3 id="51-optimization">5.1 Optimization</h3>
+<p>The value function $V_t(x)$ as the maximum expected revenue obtainable from periods $t,t-1,&hellip;,1$ with $x$ inventory units remaining.</p>
+<div>
+$$
+\begin{aligned}
+  V_t(x)  = & \max_{S\subseteq N}\{\sum_{j\in S}\lambda P_j(S)(r_j+V_{j-1}(x-1) )+ (\lambda P_0(S)+1-\lambda)V_{t-1}(x)\}  \\
+  = & \max_{S\subseteq N}\{\sum_{j\in S}\lambda P_j(S)(r_j-(V_{t-1}(x)-V_{t-1}(x-1)))\} + V_{t-1}(x) \\
+  = & \max_{S\subseteq N}\{\lambda (R(S)-Q(S))\Delta V_{t-1}(x)\} + V_{t-1}(x)
+\end{aligned}
+$$
+</div>
+<p>the optimal set $S$ is an efficient set, and can be search in problem</p>
+<div>
+$$
+\begin{aligned}
+  \max \quad & \sum_{S\subset N}\alpha(S)R(S) \\
+  s.t. \quad & \sum_{S\subseteq N} \alpha(S)Q(S)\leq Q(T) \\
+  & \sum_{S\subseteq N}\alpha(S) =1 \quad \alpha(S) \geq 0
+\end{aligned}
+$$
+</div>
+<h3 id="52-nested-by-fare-property">5.2 Nested-by-fare property</h3>
+<p>Complete set: $S={1,\dots,k}$.</p>
+<p>Under independent demand model (IDM)、multinomial logit model (MNL) and a model where a customer purchases the lowest open fare, the optimal policy is nested by fare order.</p>
+<h3 id="53-estimation">5.3 Estimation</h3>
+<p>The choice probabilities: $P_j(S)=P_j(z,\beta,S)$.</p>
+<p>For MNL model, the mean utility $u_i=\beta^T z_i$. 根据历史数据估计 $\beta$ 和顾客到达率 $\lambda$.</p>
+<p>The log-likelihood function for the MNL model has closed-form first and second partial derivatives and is jointly concave.</p>
+<p>The problem is that a period without an arrival and a period in which there was an arrival but without purchase is impossible to distinguish. Thus, EM method can overcome this problem.</p>
+<h2 id="6-multiproduct-price-optimization-under-nl-model">6 Multiproduct Price Optimization Under NL Model</h2>
+<p>The monopolist&rsquo;s problem under the NL model is to maximize the expected total profit
+$$
+R(\pmb{P})=\sum_{i=1}^n \sum_{j=1}^{m_i}(p_{ij}-c_{ij})\pi_{ij}(\pmb{P})
+$$</p>
+<p>$$
+Q_i(\pmb{P})=\frac{(\sum_{s=1}^{m_i}e^{\alpha_{is}-\beta_{is}p_{is}})^{\gamma_i}}{1+ \sum_{l=1}^n (\sum_{s=1}^{m_l}e^{\alpha_{ls}-\beta_{ls}p_{ls}})^{\gamma_l}} \quad q_{j|i}(\pmb{p_i})=\frac{e^{\alpha_{ij}-\beta_{ij}p_{ij}}}{\sum_{s=1}^{m_i}e^{\alpha_{is}-\beta_{is}p_{is}}}
+$$</p>
+<p>$$
+\pi_{ij}(\pmb{P})=Q_i(\pmb{P})\cdot q_{j|i}(\pmb{p_i})
+$$</p>
+<h3 id="61-constant-adjusted-markup">6.1 Constant Adjusted Markup</h3>
+<p>Suppose there are product-differentiated price sensitivities, then let the adjusted markup $\theta_{i}=p_{ij}-c_{ij}-1/\beta_{ij}$, and the average profit of nest $i$ is $\sum_j^{m_i}(\theta_i+1/\beta_{ij})q_{j|i}(\theta_i)=\theta_i+w_i(\theta_i)$. Consider arbitrary nest coefficients, let $\phi= \theta_i+(1-1/\gamma_i)w_i(\theta_i)$. Then the problem is 
+$$
+R(\phi)=\sum_{i=1}^n Q_i(\theta)\phi
+$$</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>If for each nest $i$, $\gamma_i \geq 0$ or $\max_s \beta_{is}/\max_s \beta_{is}\leq 1/(1-\gamma_i)$</p>
+<p>Then this problem is unimodal in $\phi$, and the optimal prices can be easily found by serveral well-known algorithms, such as 二分查找法、黄金分割搜索.etc.</p>
+</div>
+        </div>
+    </div>
+<h3 id="62-oligopolistic-competition">6.2 Oligopolistic Competition</h3>
+<p>Consider each firm controls a nest of multiple products.</p>
+<p>The price competition game as
+$$
+R_i(\pmb{P_i},\pmb{P_{-i}})=\sum_{j=1}^{m_i}(p_{ij}-c_{ij})\cdot \pi_{ij}(\pmb{P})
+$$</p>
+<p>The log-supermodular game as
+$$
+R_i(\theta_i,\theta_{-i})=Q_i(\pmb{\theta})(\theta_i + w_i(\theta_i))
+$$</p>
+<p>在 condition 1 下，$R_i(\theta_i,\theta_{-i})$ is quasi-concave in $\theta_i$，博弈存在纳什均衡.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-10-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/discrete-choice-model2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/assortment/">assortment</a>,&nbsp;<a href="/tags/content/">内容</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/latex-package/" class="prev" rel="prev" title="Latex 导言区"><i class="fas fa-angle-left fa-fw"></i>Latex 导言区</a>
+            <a href="/discrete-choice-model/" class="next" rel="next" title="小组会——离散选择模型">小组会——离散选择模型<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lioyd Shaw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer>
+ 
+
+
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"uefnzaEGhgPRfPDaRNWQ3MF4-MdYXbMMI","appKey":"4aOKu9jSOSSr2sL3DAec7Rkn","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"晚来天欲雪，能饮一杯无？","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
