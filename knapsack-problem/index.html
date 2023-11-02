@@ -5,36 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>小组会---近似算法介绍 - 难知如阴</title><meta name="Description" content="introduction to approximation algorithms"><meta property="og:title" content="小组会---近似算法介绍" />
-<meta property="og:description" content="introduction to approximation algorithms" />
+        <title>小组会---Knapsack Problem - 难知如阴</title><meta name="Description" content="Knapsack problem"><meta property="og:title" content="小组会---Knapsack Problem" />
+<meta property="og:description" content="Knapsack problem" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://skydominate.github.io/approximation-introduction/" /><meta property="og:image" content="https://skydominate.github.io/approximation-introduction/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://skydominate.github.io/knapsack-problem/" /><meta property="og:image" content="https://skydominate.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-10-13T02:26:40+08:00" />
 <meta property="article:modified_time" content="2023-10-30T02:26:40+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://skydominate.github.io/approximation-introduction/featured-image.png"/>
-<meta name="twitter:title" content="小组会---近似算法介绍"/>
-<meta name="twitter:description" content="introduction to approximation algorithms"/>
+<meta name="twitter:image" content="https://skydominate.github.io/logo.png"/>
+
+<meta name="twitter:title" content="小组会---Knapsack Problem"/>
+<meta name="twitter:description" content="Knapsack problem"/>
 <meta name="application-name" content="难知如阴">
 <meta name="apple-mobile-web-app-title" content="难知如阴"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://skydominate.github.io/approximation-introduction/" /><link rel="prev" href="https://skydominate.github.io/discrete-choice-model/" /><link rel="next" href="https://skydominate.github.io/sustainable-om/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://skydominate.github.io/knapsack-problem/" /><link rel="prev" href="https://skydominate.github.io/sustainable-om/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "小组会---近似算法介绍",
+        "headline": "小组会---Knapsack Problem",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/skydominate.github.io\/approximation-introduction\/"
-        },"image": [{
-                            "@type": "ImageObject",
-                            "url": "https:\/\/skydominate.github.io\/approximation-introduction\/featured-image.png",
-                            "width":  513 ,
-                            "height":  753 
-                        }],"genre": "posts","keywords": "algorithm, content, approximation","wordcount":  861 ,
-        "url": "https:\/\/skydominate.github.io\/approximation-introduction\/","datePublished": "2023-10-13T02:26:40+08:00","dateModified": "2023-10-30T02:26:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "https:\/\/skydominate.github.io\/knapsack-problem\/"
+        },"genre": "posts","keywords": "paper, content, approximation","wordcount":  769 ,
+        "url": "https:\/\/skydominate.github.io\/knapsack-problem\/","datePublished": "2023-10-13T02:26:40+08:00","dateModified": "2023-10-30T02:26:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Lioyd Shaw","logo": {
                     "@type": "ImageObject",
@@ -44,7 +40,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Lioyd Shaw"
-            },"description": "introduction to approximation algorithms"
+            },"description": "Knapsack problem"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -56,7 +52,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/approximation-introduction/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/knapsack-problem/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +99,7 @@
                 </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/approximation-introduction/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/knapsack-problem/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,205 +113,141 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">小组会---近似算法介绍</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">小组会---Knapsack Problem</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lioyd Shaw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-10-13">2023-10-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 861 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/approximation-introduction/" class="leancloud_visitors" data-flag-title="小组会---近似算法介绍">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-10-13">2023-10-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 769 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/knapsack-problem/" class="leancloud_visitors" data-flag-title="小组会---Knapsack Problem">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/approximation-introduction/featured-image.png"
-        data-srcset="/approximation-introduction/featured-image.png, /approximation-introduction/featured-image.png 1.5x, /approximation-introduction/featured-image.png 2x"
-        data-sizes="auto"
-        alt="/approximation-introduction/featured-image.png"
-        title="introduction to approximation algorithms" /></div><div class="details toc" id="toc-static"  kept="">
+        </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction-to-approximation-algorithms">Introduction to Approximation Algorithms</a>
+    <li><a href="#1-model">1 model</a></li>
+    <li><a href="#2-approximation-algorithms-caprara">2 Approximation algorithms (Caprara)</a>
       <ul>
-        <li><a href="#the-set-cover-problem">The Set Cover Problem</a>
-          <ul>
-            <li><a href="#deterministic-rounding-algorithm">Deterministic Rounding Algorithm</a></li>
-            <li><a href="#rounding-a-dual-solution">Rounding a Dual Solution</a></li>
-            <li><a href="#the-primal-dual-method">The Primal-dual Method</a></li>
-            <li><a href="#the-greedy-algorithm">The Greedy Algorithm</a></li>
-            <li><a href="#a-randomized-rounding-algorithm">A Randomized Rounding Algorithm</a></li>
-          </ul>
-        </li>
+        <li><a href="#21-improved-ptas-for-kp">2.1 Improved PTAS for KP</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><em><strong>2023-10-13 小组会</strong></em></p>
-<h2 id="introduction-to-approximation-algorithms">Introduction to Approximation Algorithms</h2>
-<p><em>The difficulty of sifting through large amounts of data in order to make an informed choice is ubiquitous in todays&rsquo;s society</em></p>
-<p>P=NP $\Rightarrow$ efficient algorithm: polynomial in input size</p>
-<ul>
-<li>find optimal solutions (<em><strong>relaxation</strong></em>)</li>
-<li>in polynomial time</li>
-<li>for any instance</li>
-</ul>
-<hr>
-<blockquote>
-<p><em><strong>Definition:</strong></em> An $\alpha$-approximation algorithm for an optimization problem is a polynomial-time algorithm that for all instances of the problem produces a solution whose value is with a factor of $\alpha$ of the value  of an optimal solution.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Definition:</strong></em> A polynomial-time approximation scheme (PTAS) is a family of algorithms ${A_\epsilon}$, where there is an algorithm for each $\epsilon&gt;0$, such that $A_\epsilon$ is a $(1+\epsilon)$-approximation algorithm (for minimization problems).</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> For any MAX SNP-hard problem, there does not exist a PTAS, unless P=NP.</p>
-</blockquote>
-<hr>
-<div class="details admonition tip">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>为什么是近似算法？<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">The aims is mathematical rigor in the analysis of our algorithms, content with notion of worst-case analysis. The worst-case bounds are often due to pathological cases that do not arise in practice, so that approximation algorithms often give rise to heuristics that return solutions much closer to optimal than indicated.</div>
-        </div>
-    </div>
-<h3 id="the-set-cover-problem">The Set Cover Problem</h3>
-<p><em><strong>Set Cover Problem:</strong></em> Given a ground set of elements $E={e_1,e_2,&hellip;,e_n}$, some subsets of those elements $S_1,&hellip;,S_m$ where each $S_j\subseteq E$, and a nonnegative weight $w_j\geq 0$ for each subset $S_j$. The goal is to find a minimum-weight collection of subset that covers all of $E$</p>
+            </div><div class="content" id="content"><p><em><strong>近似算法求解复杂背包问题</strong></em></p>
+<h2 id="1-model">1 model</h2>
 <div>
 $$
 \begin{aligned}
-    \text{minimize} \quad & \sum_{j\in I} w_j \\
-    \text{subject to}\quad & \bigcup_{j\in I} S_j=E \\
-    & I\subseteq \{1,...,m\}
+    \text{maximize} & \sum_{i\in S}v_i \\
+    s.t. & \sum_{i\in S} w_i \leq W \\
+    & S\subseteq N
 \end{aligned}
 $$
 </div>
-<ul>
-<li>the development of an antivirus product;</li>
-<li>the vertex cover problem</li>
-</ul>
-<p>$$
-Z_{IP}^*=OPT
-$$</p>
 <blockquote>
-<p><strong>NP-hard</strong> : non-polynomial time solvable</p>
+<p><strong>Exam 1</strong>   products $v={6,3,6,4,5}$, weight $w={2,2,6,5,4}$, capacity $W=10 (8)$, the optimal choice is $1,2,3 (1,2,5)$, value is $15 (14)$</p>
 </blockquote>
-<p>LP-relaxation: $Z_{LP}^*&lt; Z_{IP}^*$</p>
-<h4 id="deterministic-rounding-algorithm">Deterministic Rounding Algorithm</h4>
-<p>Obtain the LP solution $x^*$, include subset $S_j$ if $x_j\geq 1/f$, where $f$ is the maximum number of sets in which any emelemt appers.
-$$f=\max_{i=1,\dots,n} |{j:e_i\in S_j}|$$</p>
-<blockquote>
-<p><em><strong>Lemma:</strong></em> The collection of subsets $S_j$, $j\in I$, $I={j: x_j^*\geq 1/f}$, is a set cover.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> The rouding algorithm is an $f$-approximation algorithm for the set cover problem.</p>
-</blockquote>
-<h4 id="rounding-a-dual-solution">Rounding a Dual Solution</h4>
-<p>Each element $e_i$ is charged a price $y_i\geq 0$</p>
-<p>\begin{align*}
-\text{maximize}\quad &amp; \sum_{i=1}^n y_i\<br>
-\text{subject to}\quad &amp; \sum_{i:e_i\in S_j} y_i \leq w_j, \quad j=1,\dots,m \<br>
-&amp; y_i\geq 0
-\end{align*}</p>
-<ul>
-<li><em>weak duality:</em> $\sum_{i=1}^n y_i \leq Z_{LP}^* \leq OPT$</li>
-<li><em>strong duality:</em> $\sum_{j=1}^m w_j x_j^* = \sum_{j=1}^n y_j^*$</li>
-</ul>
-<p>Obtain the dual LP solution $y^*$, choose all subsets for which the corresponding dual inequality is tight.</p>
-<blockquote>
-<p><em><strong>Lemma:</strong></em> The collection of subsets $S_j$, $j\in I'$, $I'={j:\sum_{i:e_i\in S_j} y_i^* = w_j}$, is a set cover.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> The dual rouding algorithm is an $f$-approximation algorithm for the set cover problem.</p>
-</blockquote>
-<ul>
-<li><em>complementary slackness</em>: 
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>NPC问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">采用传统的 DFS 解法产生的时间复杂度为 $O(2^n)$，DP 方法下有递推关系 
 $$
-\sum_{i=1}^n y_i \leq \sum_{i=1}^n y_i \sum_{j:e_i\in S_j} x_j = \sum_{j=1}^m x_j \sum_{i:e_i\in S_j} y_i \leq \sum_{j=1}^m x_j w_j
-$$</li>
+V[i][W']=\max {V[i-1][W'],V[i-1][W'-w_i]+v_i}
+$$
+时间复杂度为 $O(n\cdot W)$，pseudo polynomial time solvable。当 $v_i=w_i$ 时问题等价于 subset sum problem。</div>
+        </div>
+    </div>
+<ul>
+<li>
+<p>完全背包问题</p>
+</li>
+<li>
+<p>分组背包问题</p>
+</li>
+<li>
+<p>Cardinality 约束背包问题</p>
+</li>
+<li>
+<p>$k$KP</p>
+</li>
+<li>
+<p>E-$k$KP</p>
+</li>
+<li>
+<p>$m$-DKP</p>
+</li>
 </ul>
-<h4 id="the-primal-dual-method">The Primal-dual Method</h4>
-<p>Primal-dual algorithm</p>
+<p>Both KP and $m$-DKP are NP-hard and pseudopolynomially solvable through DP. <strong>Whether these problems are fixed-parameter tractable.</strong> The existence of such algorithm implies the classes FPT and W$[1]$ are equal.</p>
+<h2 id="2-approximation-algorithms-caprara">2 Approximation algorithms (Caprara)</h2>
+<div>
+$$
+\begin{aligned}
+    \text{maximize} & \sum_{i\in S} v_i \\
+    s.t. & \sum_{i\in S} w_i \leq W \\
+    & |S| \leq K \\
+    & S\subseteq N
+\end{aligned}\quad
+\begin{aligned}
+    \text{maximize} & \sum_{i\in N} v_i x_i \\
+    s.t. & \sum_{i\in N} w_i x_i \leq W \\
+    & \sum_{i\in N} x_i \leq K \\
+    & x_i\in \{0,1\}
+\end{aligned}
+$$
+</div>
+<blockquote>
+<p><strong>Lemma 1</strong>   An optimal basic solution $x^*$ of the LP relaxation, has at most two fractional components. Let $J_1={k:x_k^*=1}$, if the basic solution has two fractional components $x_i^*$, $x_j^*$ and $w_j\leq w_i$, then $\sum_{l\in J_1}v_l + v_i\geq z^*$ and $J_1 \cup {j}$ is feasible</p>
+</blockquote>
+<p><strong>Algorithm</strong> $H^\frac{1}{2}$</p>
 <ul>
-<li>$y\leftarrow 0$</li>
-<li>$I\leftarrow \varnothing$</li>
-<li><strong>While</strong> there exists $e_i\notin \bigcup_{j\in I} S_j$ **do**
+<li>计算 LP relaxation 的最优解，其中值为 1 的解的下标集合为 $J_1$，值为分数的解下标集合为 $J_F$
 <ul>
-<li>Increase the dual variable $y_i$ until there is some $l$ with $e_i\in S_l$ such that</li>
-<li>$$ \sum_{j:e_j\in S_l} y_j=w_l $$</li>
-<li>$I\leftarrow I\cup {l}$</li>
+<li>如果 $J_F=\varnothing$，得到最优解 $S=J_1$</li>
+<li>如果 $J_F={i}$，则比较 $\max{\sum_{l\in J_1}v_l, v_i}$ 得到最优解</li>
+<li>如果 $J_F={i,j}$，其中 $w_j\leq w_i$，则比较 $\max{\sum_{l\in J_1} v_l + v_j,v_i}$</li>
 </ul>
 </li>
 </ul>
-<p>Increase  $y_i$ by $\min_{j:e_i\in S_j} \left(w_j- \sum_{k:e_k\in S_j} y_k \right)$</p>
 <blockquote>
-<p><em><strong>Theorem:</strong></em> The Primal-dual algorithm is an $f$-approximation algorithm for the set cover problem.</p>
+<p>$H^\frac{1}{2}$ is a $1/2-$approximation algorithm for $k$KP and runs in $O(n)$ time</p>
 </blockquote>
-<h4 id="the-greedy-algorithm">The Greedy Algorithm</h4>
-<p>Greedy algorithm (<em>most bang for the buck</em>)</p>
+<p><strong>Algorithm</strong> PTAS</p>
 <ul>
-<li>$I\leftarrow \varnothing$</li>
-<li>$\hat{S}_j \leftarrow S_j, \quad \forall j$</li>
-<li><strong>While</strong> $I$ is not a set cover <strong>do</strong>
+<li>令 $\varepsilon\leq 1/2$ 表示要求的精确度，及 $l=\min{\lceil 1 / \varepsilon \rceil - 2, K}$</li>
+<li>考虑集合 $L$ 满足 $|L|\leq l-1$。如果有 $\sum_{i\in L}w_i \leq W$ 和 $\sum_{i\in L} v_i &gt; z^H$。则更新 $H=L$, $z^H=\sum_{i\in L}v_i$</li>
+<li>考虑集合 $L$ 满足 $|L|=l$。如果有 $\sum_{i\in L}w_i \leq W$，定义 $S={k\in N\setminus L:v_k \leq \min_{l\in L} v_j}$ 和 capacity 约束 $W-\sum_{l\in L}w_i$, cardinality 限制 $K-l$，通过算法 $H^\frac{1}{2}$ 得到解 $T$ 和 $z_S^H$。如果 $\sum_{l\in L} v_l + z_S^H&gt; z^H$, 则令 $H=L\cup T$，$z^H=\sum_{i\in L}v_i + z_S^H$</li>
+<li>返回解 $H$ 和值 $z^H$</li>
+</ul>
+<blockquote>
+<p>PTAS is a PTAS for $k$KP and runs in $O(n^{\lceil 1/\varepsilon \rceil -1})$ time</p>
+</blockquote>
+<h3 id="21-improved-ptas-for-kp">2.1 Improved PTAS for KP</h3>
 <ul>
-<li>$l\leftarrow \arg\min_{j:\hat{S}_j\neq \varnothing} w_j/|\hat{S}_j|$</li>
-<li>$I\leftarrow I\cup {l}$</li>
-<li>$\hat{S}_j\leftarrow \hat{S}_j - S_l$</li>
+<li>在第一步中，令 $l=\min{\lceil 1/\varepsilon \rceil -2,n }$，并将产品按照 v 增序排列</li>
+<li>在第三步中，将通过算法 $H^\frac{1}{2}$ 替换为相应 KP 下的算法。并且其中的 $L$ 和其他的计算方式替换为
+<ul>
+<li>令 $L={i_1,\dots, i_l}$</li>
+<li>For $i_1\in 1,\dots, n-l+1$，令 $S={1,\dots,i_1-1}$
+<ul>
+<li>For $i_{l-1}=i_1+l -2,\dots, n-1$
+<ul>
+<li>For $T\subseteq {i_1,\dots,i_{l-1}-1}$, $|T|=l-3$
+<ul>
+<li>令 $R={i_{l-1}-1,\dots,n}$</li>
+<li>令 $i_l=R[1]$，并且计算在 $S$ 和 $W-\sum_{l\in L}w_l$ 的解</li>
+<li>For $i_l=R[2],\dots,R[n-i_{l-1}]$，根据前面的解，重新计算</li>
 </ul>
 </li>
 </ul>
-<p>at $k^{th}$ iteration
-$$
-\min_{j:\hat{S}_j} \frac{w_j}{|\hat{S}_j|} \leq \frac{\sum_{j\in O}w_j}{\sum_{j\in O}|\hat{S}_j|} = \frac{OPT}{\sum_{j\in O}|\hat{S}_j|}\leq \frac{OPT}{n_k}
-$$</p>
-<p>$$\Downarrow$$</p>
-<p>$$
-w_j\leq \frac{n_k-n_{k+1}}{n_k} OPT
-$$</p>
-<p>$$\Downarrow$$</p>
-<p>$$
-\sum_{j\in I}w_j\leq \sum_{k=1}^l \frac{n_k-n_{k+1}}{n_k} OPT \leq OPT \sum_{k=1}^l \left( \frac{1}{n_k} + \frac{1}{n_k-1}+\cdots+\frac{1}{n_{k+1}+1} \right)
-$$</p>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> The greedy algorithm is an $H_n$-approximation algorithm for the set cover problem.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> The greedy algorithm returns a solution indexed by $I$ such that $\sum_{j\in I}w_j \leq H_g Z_{LP}^*$, where $g=\max_j |S_j|$.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> If there exists a $c\ln n$-approximation algorithm for the unweighted set cover problem for some constant $c&lt;1$, then there is an $O(n^{O(\log\log n)})$-time deterministic algorithm for each NP-complete problem.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> There exists some constant $c&gt;0$ such that if there exists a $c\ln n$-approximation algorithm for the unweighted set cover problem, then P=NP.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> If there exists an $\alpha$-approximation algorithm for the vertex cover problem with $\alpha&lt; 10\sqrt{5}-21 \approx 1.36$, then P=NP.</p>
-</blockquote>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> Assuming the unique games conjecture, if there exists an $\alpha$-approximation algorithm for the vertex cover problem with constant $\alpha&lt;2$, then P=NP.</p>
-</blockquote>
-<h4 id="a-randomized-rounding-algorithm">A Randomized Rounding Algorithm</h4>
-<p>$$
-E\left[ \sum_{j=1}^m w_j X_j \right] = \sum_{j=1}^m w_j \Pr[X_j=1] = \sum_{j=1}^m w_j x_j^* = Z_{LP}^* \leq OPT
-$$</p>
-<ul>
-<li>the probability that $e_i$ is not covered: 
-$$
-\prod_{j:e_i\in S_j} (1-x_j^*) \leq  \prod_{j:e_i\in S_j} e^{-x_j^*} \leq e^{-1}
-$$</li>
+</li>
 </ul>
-<p>An algorithm works with <em>high probability</em>: chance of failure is at most $n^{-c}$ for any constant $c$</p>
-<p>For each subset $S_j$, consider a coin that comes up heads with probability $x_j^*$, and flip the coin $c\ln n$ times. If it comes up heads in any of the $c\ln n$ trials, then include $S_j$ in the solution.</p>
-<p>$$
-\prod_{j:e_i\in S_j} (1-x_j^*)^{c\ln n} \leq  \frac{1}{n^c}
-$$</p>
-<blockquote>
-<p><em><strong>Theorem:</strong></em> The algorithm is a randomized $O(\ln n)$-approximation algorithm that produces a set cover with high probability.</p>
-</blockquote>
-<p>$$
-E\left[ \sum_{j=1}^m w_j X_j \right] = \sum_{j=1}^m w_j \left(1- (1-x_j^*)^{c\ln n} \right) \leq \sum_{j=1}^m w_j (c\ln n) x_j^*
-$$</p></div><div class="post-footer" id="post-footer">
+</li>
+</ul>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -325,7 +257,7 @@ $$</p></div><div class="post-footer" id="post-footer">
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/approximation-introduction/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/knapsack-problem/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -334,14 +266,13 @@ $$</p></div><div class="post-footer" id="post-footer">
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/algorithm/">algorithm</a>,&nbsp;<a href="/tags/content/">内容</a>,&nbsp;<a href="/tags/approximation/">approximation</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/paper/">paper</a>,&nbsp;<a href="/tags/content/">内容</a>,&nbsp;<a href="/tags/approximation/">approximation</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/discrete-choice-model/" class="prev" rel="prev" title="小组会——离散选择模型"><i class="fas fa-angle-left fa-fw"></i>小组会——离散选择模型</a>
-            <a href="/sustainable-om/" class="next" rel="next" title="小组会---Sustainable Operations Management">小组会---Sustainable Operations Management<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/sustainable-om/" class="prev" rel="prev" title="小组会---Sustainable Operations Management"><i class="fas fa-angle-left fa-fw"></i>小组会---Sustainable Operations Management</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

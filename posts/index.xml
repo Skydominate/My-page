@@ -5,6 +5,20 @@
         <description>所有文章 | 难知如阴</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lkdntt@163.com (Lioyd Shaw)</managingEditor>
             <webMaster>lkdntt@163.com (Lioyd Shaw)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 13 Oct 2023 02:26:40 &#43;0800</lastBuildDate><atom:link href="https://skydominate.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>小组会---Knapsack Problem</title>
+    <link>https://skydominate.github.io/knapsack-problem/</link>
+    <pubDate>Fri, 13 Oct 2023 02:26:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/knapsack-problem/</guid>
+    <description><![CDATA[<p><em><strong>近似算法求解复杂背包问题</strong></em></p>]]></description>
+</item><item>
+    <title>小组会---Sustainable Operations Management</title>
+    <link>https://skydominate.github.io/sustainable-om/</link>
+    <pubDate>Fri, 13 Oct 2023 02:26:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://skydominate.github.io/sustainable-om/</guid>
+    <description><![CDATA[<p><em><strong>小组会：UTD期刊关于可持续发展管理的文章方向分享</strong></em></p>]]></description>
+</item><item>
     <title>小组会---近似算法介绍</title>
     <link>https://skydominate.github.io/approximation-introduction/</link>
     <pubDate>Fri, 13 Oct 2023 02:26:40 &#43;0800</pubDate>
@@ -60,20 +74,5 @@
     <author>作者</author>
     <guid>https://skydominate.github.io/excerpt-and-essay/</guid>
     <description><![CDATA[<p><em><strong>论文写作中可以借鉴的句子</strong></em></p>]]></description>
-</item><item>
-    <title>好书推荐</title>
-    <link>https://skydominate.github.io/book-recommended/</link>
-    <pubDate>Thu, 04 Nov 2021 09:08:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://skydominate.github.io/book-recommended/</guid>
-    <description><![CDATA[<p><em><strong>记录一下我遇到的有益、有意思或打发时间的书或文。</strong></em></p>
-<p>这里面有穿越者必备的三大神书，有各种令人头大的工具书，当然还有纯粹的爽文<i class="far fa-grin-squint-tears"></i>。</p>]]></description>
-</item><item>
-    <title>主题文档 - 基本概念</title>
-    <link>https://skydominate.github.io/theme-documentation-basics/</link>
-    <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://skydominate.github.io/theme-documentation-basics/</guid>
-    <description><![CDATA[<p>探索 Hugo - <strong>LoveIt</strong> 主题的全部内容和背后的核心概念.</p>]]></description>
 </item></channel>
 </rss>
